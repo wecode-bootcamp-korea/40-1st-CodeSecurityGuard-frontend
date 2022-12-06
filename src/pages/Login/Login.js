@@ -22,8 +22,10 @@ function Login() {
   console.log('password:', password);
 
   //버튼 활성화 되었을 때 email.pw 확인 -> 로그인 성공 혹은 실패(alert)
-  const signin = () => {
-    fetch('api 주소', {
+  const signin = useEffect;
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/loginData.json', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -35,13 +37,14 @@ function Login() {
     })
       .then(response => response.json())
       .then(data => {
-        if (response.message === '') {
-          alert('아이디 또는 비밀번호가 맞지 않습니다.');
-        } else if (response.message === '백엔드 메시지') {
-          Navigate('직전화면');
-        }
+        // if (response.message === '') {
+        //   alert('아이디 또는 비밀번호가 맞지 않습니다.');
+        // } else if (response.message === '백엔드 메시지') {
+        //   Navigate('직전화면');
+        // }
+        console.log([]);
       });
-  };
+  }, []);
 
   return (
     <div className="login_wrap">
@@ -74,10 +77,8 @@ function Login() {
       <button className="signin_button" onClick={signin} disabled>
         로그인
       </button>
-
-      <button className="signup_button" onClick={signup}>
-        회원가입
-      </button>
+      {/* onClick={signup} 넣어줘야 함 */}
+      <button className="signup_button">회원가입</button>
 
       <div className="find_wrap">
         <div>
@@ -91,5 +92,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;
