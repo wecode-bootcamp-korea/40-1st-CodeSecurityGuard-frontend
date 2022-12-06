@@ -1,11 +1,16 @@
+@mixin flex($display, $align-items, $justify-content) {
+  display: $display;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
 .login {
   .login_wrap {
+    @include flex(flex, center, center);
     width: 516px;
     height: 407px;
-    display: flex;
+    margin: 35;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 0;
     padding: 0;
   }
@@ -35,6 +40,7 @@
     font-weight: 400;
     font-size: 14px;
     color: #00388c;
+    cursor: pointer;
 
     &.signin_button {
       background-color: #09388c;
@@ -43,10 +49,7 @@
   }
 
   .find_wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-decoration: underline;
+    @include flex(flex, center, center);
     color: #a1a1a1;
     font-size: 14px;
 
