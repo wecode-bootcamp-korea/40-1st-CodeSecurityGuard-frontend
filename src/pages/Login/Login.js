@@ -6,7 +6,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  //🌟로그인 통과 함수 (조건에 맞아야만- 데이터 넘겨서 이메일, 비밀번호 맞는지 확인해줌)
+  //🌟로그인 통과 함수 (조건에 맞아야만 -> 버튼이 눌려서 -> 데이터 넘겨서 이메일, 비밀번호 맞는지 확인해줌)
   const disabled = !(email.includes('@') && password.length >= 5);
 
   //이벤트 참조 값으로 바꾸어주는 함수
@@ -22,29 +22,23 @@ function Login() {
   console.log('password:', password);
 
   //버튼 활성화 되었을 때 email.pw 확인 -> 로그인 성공 혹은 실패(alert)
-  const signin = useEffect;
 
-  useEffect(() => {
-    fetch('http://localhost:3000/data/loginData.json', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        // if (response.message === '') {
-        //   alert('아이디 또는 비밀번호가 맞지 않습니다.');
-        // } else if (response.message === '백엔드 메시지') {
-        //   Navigate('직전화면');
-        // }
-        console.log([]);
-      });
-  }, []);
+  // const handleLogin = () => {
+  //   fetch('http://localhost:3000/data/loginData.json', {
+  //     headers: {
+  //       'Content-Type': 'application/json;charset=utf-8',
+  //     },
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       // if (response.message === '') {
+  //       //   alert('아이디 또는 비밀번호을 확인해주세요.');
+  //       // } else if (response.message === '백엔드 메시지') {
+  //       //   Navigate('직전화면');
+  //       // }
+  //       console.log(data);
+  //     });
+  // };
 
   return (
     <div className="login_wrap">
@@ -70,11 +64,10 @@ function Login() {
       />
 
       {/* 버튼 누를 시 경우
-      1. 조건충족 안됨 -> 버튼 비활성 및 alert 이메일 또는 비밀번호를 확인해주세요
-      2. 조건충족 완료 -> 버튼 활성 -> 데이터 확인 
-      -> 로그인 된 상태에서 직전 화면으로 이동 or 이메일 또는 비밀번호가 일치하지 않습니다 */}
+      1. 조건 충족된 이메일,비밀번호 입력됨.-> 버튼 활성 -> 데이터 확인 
+      -> 로그인 된 상태에서 직전 화면으로 이동 or 이메일 또는 비밀번호를 다시 확인해주세요*/}
 
-      <button className="signin_button" onClick={signin} disabled>
+      <button className="signin_button" onClick={handleLogin}>
         로그인
       </button>
       {/* onClick={signup} 넣어줘야 함 */}
@@ -92,3 +85,5 @@ function Login() {
     </div>
   );
 }
+
+export default Login;
