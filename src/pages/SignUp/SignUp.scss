@@ -1,0 +1,102 @@
+@mixin font($font-size, $text-align) {
+  font-size: $font-size;
+  text-align: $text-align;
+}
+
+@mixin flex($display, $align-items, $justify-content) {
+  display: $display;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin mobileSize {
+  width: 100px;
+  height: 60px;
+}
+
+@mixin signupWrap {
+  margin-top: 30px;
+  display: block;
+  text-align: left;
+}
+
+.signUp {
+  width: 665px;
+  // .signupTitle {
+  //   @include font(38px, center);
+  //   font-weight: bolder;
+  // }
+  // //p 로 써도 되지만 가독성을 위해서 classname 써봄 -좋은 방법일까?
+  // .signupRequired {
+  //   @include font(13px, right);
+  // }
+
+  .signupTop {
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+
+    h2.signupTitle {
+      @include font(38px, center);
+      padding: 52px 52px 97px 52px;
+      font-weight: bolder;
+    }
+    //p 로 써도 되지만 가독성을 위해서 classname 써봄 -> 나중에는...?
+    h3.signupSubtitle {
+      @include font(29px, left);
+    }
+
+    p.signupRequired {
+      @include font(13px, right);
+    }
+  }
+
+  //네스팅 안해도 되는데 구분이 편하도록 묶음 짜피 나머지는 영향 받지 않으므로... 나중에 문제 될까???
+  .inputWrap {
+    display: block;
+    text-align: left;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid;
+
+    input {
+      width: 380px;
+      height: 60px;
+      padding: 11px 13px;
+      margin-bottom: 16px;
+      border: 1px solid #dddddd;
+      border-radius: 3px;
+      &.mobileCenter {
+        margin-bottom: 0px;
+        @include mobileSize();
+      }
+      &.mobileLast {
+        margin-bottom: 0px;
+        @include mobileSize();
+      }
+    }
+  }
+
+  .agreeWrap {
+    @include signupWrap();
+  }
+
+  .mobileInfo {
+    @include flex(flex, center, space-between);
+    select {
+      @include mobileSize();
+    }
+
+    //select 를 네스팅하면 스타일 적용되지 않음..
+    //input끼리 모아서 보기 편하게!
+
+    // input.mobileCenter {
+    //   width: 80px;
+    //   height: 60px;
+    // }
+
+    // input.mobileLast {
+    //   width: 80px;
+    //   height: 60px;
+    // }
+  }
+}
