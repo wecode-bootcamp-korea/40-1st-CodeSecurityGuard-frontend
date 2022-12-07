@@ -1,3 +1,5 @@
+@import '/src/styles/variables';
+
 .mainProductList {
   position: relative;
   width: 89%;
@@ -22,13 +24,11 @@
 
   .nextProductSlideButton,
   .prevProductSlideButton {
-    position: absolute;
+    @include alignCenterY(absolute);
     z-index: 10;
-    top: 50%;
     width: 48px;
     height: 48px;
     padding: 20px;
-    transform: translateY(-50%);
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 10px 0px rgb(185, 183, 183);

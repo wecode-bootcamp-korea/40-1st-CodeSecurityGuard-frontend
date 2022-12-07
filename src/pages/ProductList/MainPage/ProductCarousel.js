@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import './ProductCarousel.scss';
 
 const ProductCarousel = () => {
-  const TOTAL_PRODUCT_SLIDES = 3;
+  const TOTAL_PRODUCT_SLIDES = PRODUCTS.length - 5;
   const slideRef = useRef(null);
   const [currentIdx, setCurrentIdx] = useState(0);
 
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
     slideRef.current.style.transform = `translateX(-${currentIdx * 266}px)`;
-  }, [currentIdx]);
+  });
 
   const nextProduct = () => {
     if (currentIdx >= TOTAL_PRODUCT_SLIDES) {
@@ -35,8 +35,8 @@ const ProductCarousel = () => {
       </h1>
       <div className="productCarousel">
         <div className="productCarouselBox " ref={slideRef}>
-          {PRODUCT_INFO.map(cardElement => (
-            <ProductCard key={cardElement.id} card={cardElement} />
+          {PRODUCTS.map(product => (
+            <ProductCard key={product.id} card={product} />
           ))}
         </div>
       </div>
@@ -50,7 +50,21 @@ const ProductCarousel = () => {
   );
 };
 
-const PRODUCT_INFO = [
+const ProductCard = ({ card }) => {
+  return (
+    <div className="card">
+      <div className="cardImage">
+        <Link to={card.link}>
+          <img alt="banner" src={card.url} />
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default ProductCarousel;
+
+const PRODUCTS = [
   {
     id: 1,
     url: 'https://images.unsplash.com/photo-1670062933973-d4dc58467a9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
@@ -84,17 +98,3 @@ const PRODUCT_INFO = [
     url: 'https://images.unsplash.com/photo-1670062933973-d4dc58467a9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
   },
 ];
-
-const ProductCard = ({ card }) => {
-  return (
-    <div className="card">
-      <div className="cardImage">
-        <Link to={card.link}>
-          <img alt="banner" src={card.url} />
-        </Link>
-      </div>
-    </div>
-  );
-};
-
-export default ProductCarousel;

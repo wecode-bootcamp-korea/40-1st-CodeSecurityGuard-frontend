@@ -1,3 +1,5 @@
+@import '/src/styles/variables';
+
 .carousel {
   position: relative;
   overflow: hidden;
@@ -23,11 +25,9 @@
 
   .nextSlideButton,
   .prevSlideButton {
-    display: flex;
+    @include flex(center, center);
     position: absolute;
     z-index: 1;
-    align-items: center;
-    justify-content: center;
     width: 48px;
     height: 48px;
     padding: 20px;
@@ -52,13 +52,11 @@
   }
 
   .indexLabel {
-    display: flex;
+    @include flex(center, center);
     position: absolute;
     z-index: 10;
     top: 85%;
     left: 90%;
-    align-items: center;
-    justify-content: center;
     width: 50px;
     height: 30px;
     border-radius: 25px;

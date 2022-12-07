@@ -3,31 +3,9 @@ import { Link } from 'react-router-dom';
 import './MainCarousel.scss';
 
 const MainCarousel = () => {
-  const TOTAL_SLIDES = 3;
+  const TOTAL_SLIDES = BANNERS.length - 1;
   const [currentIdx, setCurrentIdx] = useState(0);
   const slideRef = useRef(null);
-  const IMG = [
-    {
-      id: 1,
-      url: 'https://images.unsplash.com/photo-1669745355187-a926c7a721ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
-      link: '/1',
-    },
-    {
-      id: 2,
-      url: 'https://images.unsplash.com/photo-1670031652349-1b65e8af026c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1856&q=80',
-      link: '/2',
-    },
-    {
-      id: 3,
-      url: 'https://images.unsplash.com/photo-1669908366209-0edf94c4f6f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80',
-      link: '/2',
-    },
-    {
-      id: 4,
-      url: 'https://images.unsplash.com/photo-1669967284114-fe0419656123?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80',
-      link: '/2',
-    },
-  ];
 
   const nextSlide = () => {
     if (currentIdx >= TOTAL_SLIDES) {
@@ -53,15 +31,11 @@ const MainCarousel = () => {
   return (
     <div className="carousel">
       <div className="carouselBox " ref={slideRef}>
-        {IMG.map(imageElement => (
-          <div className="carouselContainer " key={imageElement.id}>
+        {BANNERS.map(banner => (
+          <div className="carouselContainer " key={banner.id}>
             <div>
-              <Link to={imageElement.link}>
-                <img
-                  className="carouselImage"
-                  alt="banner"
-                  src={imageElement.url}
-                />
+              <Link to={banner.link}>
+                <img className="carouselImage" alt="banner" src={banner.url} />
               </Link>
             </div>
           </div>
@@ -75,7 +49,7 @@ const MainCarousel = () => {
       </div>
       <div className="indexLabel">
         <span>
-          {currentIdx + 1} / {IMG.length}
+          {currentIdx + 1} / {BANNERS.length}
         </span>
       </div>
     </div>
@@ -83,3 +57,26 @@ const MainCarousel = () => {
 };
 
 export default MainCarousel;
+
+const BANNERS = [
+  {
+    id: 1,
+    url: 'https://images.unsplash.com/photo-1669745355187-a926c7a721ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
+    link: '#',
+  },
+  {
+    id: 2,
+    url: 'https://images.unsplash.com/photo-1670031652349-1b65e8af026c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1856&q=80',
+    link: '#',
+  },
+  {
+    id: 3,
+    url: 'https://images.unsplash.com/photo-1669908366209-0edf94c4f6f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80',
+    link: '#',
+  },
+  {
+    id: 4,
+    url: 'https://images.unsplash.com/photo-1669967284114-fe0419656123?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80',
+    link: '#',
+  },
+];
