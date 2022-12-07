@@ -7,6 +7,7 @@
 }
 
 a {
+  border-bottom: solid;
   color: #999999;
   text-decoration-line: none;
 }
@@ -83,4 +84,10 @@ a {
   width: 1px;
   height: 10px;
   margin: 20px;
+}
+
+.v-line {
+  height: 10px;
+  margin: 15px;
+  border-left: solid;
 }

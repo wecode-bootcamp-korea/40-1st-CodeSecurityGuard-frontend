@@ -1,35 +1,38 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.scss';
 
 const Footer = () => {
   return (
     <div class="footer">
       <div class="footerarea1">
-        <a href="">로그인</a>
-        <a href="">고객센터</a>
-        <a href="">브랜드 스토리</a>
-        <a href="">블로그</a>
-        <a href="">인재채용</a>
+        <Link to="/Product">로그인</Link>
+        <Link to="/Product">고객센터</Link>
+        <Link to="/Product">브랜드 스토리</Link>
+        <Link to="/Product">블로그</Link>
+        <Link to="/Product">인재채용</Link>
       </div>
       <hr />
       <div class="footerarea2">
         <div class="footerarea2-1">
-          <p class="footerarea2-1-p">(주)와이즐리컴퍼니 사업자정보</p>
+          <p class="footerarea2-1-p">(주)코드방범대</p>
 
           <p>
-            서울특별시 강남구 영동대로 96길 20, 5층(삼성동, 대화빌딩) 대표자:
-            김동욱
+            서울시 강남구 테헤란로 427 위워크 타워(위워크 선릉 2호점)
+            프로젝트매니져: 윤수인
           </p>
           <p>
-            사업자 등록번호: 344-88-00965, 통신판매업신고번호:
-            2020-서울강남-02333
+            사업자 등록번호: 331-88-02937, 통신판매업신고번호:
+            8282-서울강남-010684
           </p>
           <p>
-            개인정보보호책임자: 김윤호 yhkim@wiselycompany.com, 고객센터:
-            1833-9133
+            프로덕트매니져: 김영석 yeongseok0219@gmail.com, 고객센터: 1833-9133
           </p>
-          <p>E-mail: help@wiselycompany.com</p>
-          <p>제휴문의: jjoak@wiselycompany.com</p>
+          <p>E-mail: help@codesecurityguard.com</p>
+          <p>
+            제휴문의:
+            https://github.com/wecode-bootcamp-korea/40-1st-CodeSecurityGuard-frontend
+          </p>
         </div>
         <div class="footerarea2-2">
           <div class="footerarea2-2-1">
@@ -51,18 +54,18 @@ const Footer = () => {
       </div>
       <div class="footerarea3">
         <div class="footerarea3-1">
-          <a href="">개인정보처리방침</a>
-          <hr />
-          <a href="">이용안내</a>
-          <hr />
-          <a href="">사업자정보확인</a>
-          <hr />
-          <a href="">이용약관</a>
-          <hr />
-          <a href="">이메일무단수집거부</a>
+          <Link to="/Product">개인정보처리방침</Link>
+          <div class="v-line" />
+          <Link to="/Product">이용안내</Link>
+          <div class="v-line" />
+          <Link to="/Product">사업자정보확인</Link>
+          <div class="v-line" />
+          <Link to="/Product">이용약관</Link>
+          <div class="v-line" />
+          <Link to="/Product">이메일무단수집거부</Link>
         </div>
         <span>
-          ©2018-2022. <b>WISELYCOMPANY</b> All rights reserved.
+          ©2018-2022. <b>CodeSecurityGuard</b> All rights reserved.
         </span>
       </div>
     </div>
