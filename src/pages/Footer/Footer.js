@@ -35,7 +35,7 @@ const Footer = () => {
           </p>
         </div>
         <div class="footer-info-right">
-          <div class="footer-info-right-1">
+          <div class="footer-info-right-kakaotalk">
             <img
               class="kakaotalk-icon"
               alt="카카오톡아이콘"
