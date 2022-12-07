@@ -15,7 +15,7 @@ const Footer = () => {
       <hr />
       <div class="footer-info">
         <div class="footer-info-left">
-          <p>(주)코드방범대</p>
+          <p class="footer-info-left-p">(주)코드방범대</p>
 
           <p>
             서울시 강남구 테헤란로 427 위워크 타워(위워크 선릉 2호점)
@@ -39,7 +39,7 @@ const Footer = () => {
             <img
               class="kakaotalk-icon"
               alt="카카오톡아이콘"
-              src=".\images\kakaotalk-icon.webp"
+              src=".\images\kakaotalk-icon.svg"
             />
             <p class="kakaotalk-channel">카카오톡 채널 '코드방범대'</p>
           </div>
