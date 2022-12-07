@@ -14,7 +14,7 @@ const Footer = () => {
       </div>
       <hr />
       <div class="footer-info">
-        <div class="footer-info-1">
+        <div class="footer-info-left">
           <p>(주)코드방범대</p>
 
           <p>
@@ -34,8 +34,8 @@ const Footer = () => {
             https://github.com/wecode-bootcamp-korea/40-1st-CodeSecurityGuard-frontend
           </p>
         </div>
-        <div class="footer-info-2">
-          <div class="footer-info-2-1">
+        <div class="footer-info-right">
+          <div class="footer-info-right-1">
             <img
               class="kakaotalk-icon"
               alt="카카오톡아이콘"
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
       </div>
       <div class="footer-notice-list">
-        <div class="footer-notice-list-1">
+        <div class="footer-notice-item">
           <Link to="#">개인정보처리방침</Link>
           <div class="v-line" />
           <Link to="#">이용안내</Link>

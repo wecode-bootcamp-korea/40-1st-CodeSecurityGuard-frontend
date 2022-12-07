@@ -26,17 +26,17 @@ a {
   margin: 10px;
   line-height: 140%;
 }
-.footer-info-1 p {
+.footer-info-left p {
   margin: 20px;
 }
 
-.footer-info-2 {
+.footer-info-right {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.footer-info-2-1 {
+.footer-info-right-1 {
   margin-bottom: 12px;
 }
 .kakaotalk-icon {
@@ -75,7 +75,7 @@ a {
   justify-content: space-between;
   margin-top: 60px;
 }
-.footer-notice-list-1 {
+.footer-notice-item {
   display: flex;
   align-items: center;
 }
