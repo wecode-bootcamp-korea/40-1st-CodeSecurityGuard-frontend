@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Header from './components/Header/Header';
-import Nav2 from './components/Nav/Nav2';
+import Nav from './components/Nav/Nav';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 
 const Router = () => {
@@ -9,7 +9,7 @@ const Router = () => {
     <BrowserRouter>
       {/* <Header />
       <Nav /> */}
-      <Nav2 />
+      <Nav />
       <Routes>
         <Route path="/" element={<ProductDetail />} />
         <Route path="/productdetail" element={<ProductDetail />} />
