@@ -18,7 +18,7 @@ function Login() {
     //만든 변수 -> setInputvalues으로 변경
     setInputValues({ ...inputValues, [name]: value });
   };
-  console.log(inputValues.email, inputValues.password);
+  console.log('이메일:', inputValues.email, '패스워드', inputValues.password);
 
   // console.log({ handleInput });
 
@@ -60,10 +60,10 @@ function Login() {
 
         <div className="find_wrap">
           <div>
-            <a class="find_email">이메일 찾기</a>
+            <a className="find_email">이메일 찾기</a>
           </div>
           <div>
-            <a class="find_askpassword">비밀번호 찾기</a>
+            <a className="find_askpassword">비밀번호 찾기</a>
           </div>
         </div>
       </div>

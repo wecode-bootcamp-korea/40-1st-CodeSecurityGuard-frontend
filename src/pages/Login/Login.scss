@@ -6,7 +6,7 @@
 
 .login {
   .login_wrap {
-    @include flex(flex, center, center);
+    @include flex();
     width: 516px;
     height: 407px;
     margin: 35;
@@ -21,10 +21,8 @@
     padding: 11px 13px !important;
     margin-bottom: 16px !important;
     background-color: #fafafa;
-    border-color: #dddddd;
-    border-style: solid;
+    border: 1px solid #dddddd;
     border-radius: 3px;
-    border-width: 1px;
   }
 
   button {
@@ -33,10 +31,8 @@
     padding: 11px 13px !important;
     margin-bottom: 16px !important;
     background-color: #fafafa;
-    border-color: #09388c;
-    border-style: solid;
+    border: 1.5px solid #09388c;
     border-radius: 3px;
-    border-width: 1.5px;
     font-weight: 400;
     font-size: 14px;
     color: #00388c;
@@ -49,7 +45,7 @@
   }
 
   .find_wrap {
-    @include flex(flex, center, center);
+    @include flex();
     color: #a1a1a1;
     font-size: 14px;
 
