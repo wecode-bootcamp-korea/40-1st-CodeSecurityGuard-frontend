@@ -1,8 +1,35 @@
-li {
-  list-style: none;
+.container {
 }
 
+.contents {
+  margin: 60px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.ad {
+  width: 100%;
+  height: auto;
+}
+.listTitle {
+  .listTitleText {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+  }
+}
+
+.productListMenu {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.sorting {
+  float: right;
+}
 .productList {
+  margin-bottom: 80px;
 }
 
 ul {
@@ -10,4 +37,8 @@ ul {
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 0 auto;
+}
+
+li {
+  list-style: none;
 }
