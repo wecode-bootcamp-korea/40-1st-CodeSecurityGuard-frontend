@@ -7,8 +7,6 @@ import ProductDetail from './pages/ProductDetail/ProductDetail';
 const Router = () => {
   return (
     <BrowserRouter>
-      {/* <Header />
-      <Nav /> */}
       <Nav />
       <Routes>
         <Route path="/" element={<ProductDetail />} />

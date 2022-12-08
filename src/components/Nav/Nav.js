@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Nav.scss';
+import CategoryList from '../CategoryList/CategoryList';
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="navBox">
+    <nav className="navBox">
       <header>
         <div className="headerElement">
           <ul className="headerLink">
@@ -35,10 +38,17 @@ const Nav = () => {
           </form>
         </div>
       </header>
-      <nav className="navWrapper">
-        <div className="navLeft">
+      <div className="navWrapper">
+        <div
+          className="navLeft"
+          onMouseEnter={() => setIsOpen(true)}
+          onMouseLeave={() => setIsOpen(false)}
+        >
           <img src="/images/menu.png" alt="메뉴" />
-          <span>카테고리</span>
+          <span>
+            카테고리
+            <div className="navCategory">{isOpen && <CategoryList />}</div>
+          </span>
         </div>
         <div className="tabMenuWrapper">
           <ul className="tabMenu">
@@ -54,8 +64,8 @@ const Nav = () => {
           </ul>
         </div>
         <div className="rightMenuWrapper" />
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 
