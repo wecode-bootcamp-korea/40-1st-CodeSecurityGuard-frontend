@@ -1,11 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './MainCarousel.scss';
 
 const MainCarousel = () => {
   const TOTAL_SLIDES = BANNERS.length - 1;
   const [currentIdx, setCurrentIdx] = useState(0);
-  const slideRef = useRef(null);
+
+  const moveCarousel = {
+    transition: 'all 0.5s ease-in-out',
+    transform: `translateX(-${currentIdx * 100}%)`,
+  };
 
   const nextSlide = () => {
     if (currentIdx >= TOTAL_SLIDES) {
@@ -23,14 +27,9 @@ const MainCarousel = () => {
     }
   };
 
-  useEffect(() => {
-    slideRef.current.style.transition = 'all 0.5s ease-in-out';
-    slideRef.current.style.transform = `translateX(-${currentIdx * 100}%)`;
-  }, [currentIdx]);
-
   return (
     <div className="carousel">
-      <div className="carouselBox " ref={slideRef}>
+      <div className="carouselBox " style={moveCarousel}>
         {BANNERS.map(banner => (
           <div className="carouselContainer " key={banner.id}>
             <div>

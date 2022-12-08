@@ -1,20 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProductCarousel.scss';
 
 const ProductCarousel = () => {
   const TOTAL_PRODUCT_SLIDES = PRODUCTS.length - 5;
-  const slideRef = useRef(null);
   const [currentIdx, setCurrentIdx] = useState(0);
 
-  useEffect(() => {
-    slideRef.current.style.transition = 'all 0.5s ease-in-out';
-    slideRef.current.style.transform = `translateX(-${currentIdx * 266}px)`;
-  });
+  const moveProductCarousel = {
+    transition: 'all 0.5s ease-in-out',
+    transform: `translateX(-${currentIdx * 266}px)`,
+  };
 
   const nextProduct = () => {
     if (currentIdx >= TOTAL_PRODUCT_SLIDES) {
-      setCurrentIdx(0);
+      return;
     } else {
       setCurrentIdx(prev => prev + 1);
     }
@@ -22,7 +21,7 @@ const ProductCarousel = () => {
 
   const prevProduct = () => {
     if (currentIdx === 0) {
-      setCurrentIdx(TOTAL_PRODUCT_SLIDES);
+      return;
     } else {
       setCurrentIdx(prev => prev - 1);
     }
@@ -34,18 +33,22 @@ const ProductCarousel = () => {
         가격 거품을 걷어내고, 성분에 집중한 스킨케어
       </h1>
       <div className="productCarousel">
-        <div className="productCarouselBox " ref={slideRef}>
+        <div className="productCarouselBox " style={moveProductCarousel}>
           {PRODUCTS.map(product => (
             <ProductCard key={product.id} card={product} />
           ))}
         </div>
       </div>
-      <div className="prevProductSlideButton" onClick={prevProduct}>
-        〈
-      </div>
-      <div className="nextProductSlideButton" onClick={nextProduct}>
-        〉
-      </div>
+      {currentIdx !== 0 && (
+        <div className="prevProductSlideButton" onClick={prevProduct}>
+          〈
+        </div>
+      )}
+      {currentIdx < TOTAL_PRODUCT_SLIDES && (
+        <div className="nextProductSlideButton" onClick={nextProduct}>
+          〉
+        </div>
+      )}
     </div>
   );
 };
