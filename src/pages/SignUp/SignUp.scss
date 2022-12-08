@@ -22,15 +22,7 @@
 
 .signUp {
   width: 665px;
-  // .signupTitle {
-  //   @include font(38px, center);
-  //   font-weight: bolder;
-  // }
-  // //p 로 써도 되지만 가독성을 위해서 classname 써봄 -좋은 방법일까?
-  // .signupRequired {
-  //   @include font(13px, right);
-  // }
-
+  margin: 30px;
   .signupTop {
     margin-bottom: 30px;
     border-bottom: 1px solid;
@@ -40,7 +32,7 @@
       padding: 52px 52px 97px 52px;
       font-weight: bolder;
     }
-    //p 로 써도 되지만 가독성을 위해서 classname 써봄 -> 나중에는...?
+
     h3.signupSubtitle {
       @include font(29px, left);
     }
@@ -50,53 +42,109 @@
     }
   }
 
-  //네스팅 안해도 되는데 구분이 편하도록 묶음 짜피 나머지는 영향 받지 않으므로... 나중에 문제 될까???
-  .inputWrap {
+  .userInfo {
     display: block;
     text-align: left;
-    margin-top: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid;
-
-    input {
-      width: 380px;
-      height: 60px;
-      padding: 11px 13px;
-      margin-bottom: 16px;
-      border: 1px solid #dddddd;
-      border-radius: 3px;
-      &.mobileCenter {
-        margin-bottom: 0px;
-        @include mobileSize();
-      }
-      &.mobileLast {
-        margin-bottom: 0px;
-        @include mobileSize();
-      }
-    }
   }
+}
 
+.form {
+  margin: 30px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.agreeWrap {
+  display: flex;
+  align-items: center;
+}
+
+.formTitle {
+  width: 170px;
+}
+
+input {
+  width: 380px;
+  height: 60px;
+  padding: 11px 13px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  outline: none;
+}
+
+::placeholder {
+  color: #dddddd;
+}
+
+.agreeWrap {
+  margin: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.agreeTitle {
+  margin-left: 0px;
+  width: 170px;
+}
+
+input[type='checkbox'] {
+  background: url('../../../public/images/check.png') no-repeat center;
+  background-size: 40px 40px;
+  cursor: pointer;
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid #999;
+  transition: background 0.2s;
+  margin-right: 20px;
+}
+
+input[type='checkbox']:checked {
+  background: url(../../../public/images/checked.png) no-repeat center;
+  background-size: 40px 40px;
+}
+
+label {
+  font-size: 35px;
+}
+
+.signUpInputMobile {
+  margin: 30px;
+  display: flex;
+  .phonNumberTitle {
+    margin-left: 0px;
+    width: 170px;
+  }
+  .mobileCenter {
+    @include mobileSize();
+  }
+  .mobileLast {
+    @include mobileSize();
+  }
   .agreeWrap {
     @include signupWrap();
   }
-
   .mobileInfo {
     @include flex(flex, center, space-between);
     select {
       @include mobileSize();
     }
-
-    //select 를 네스팅하면 스타일 적용되지 않음..
-    //input끼리 모아서 보기 편하게!
-
-    // input.mobileCenter {
-    //   width: 80px;
-    //   height: 60px;
-    // }
-
-    // input.mobileLast {
-    //   width: 80px;
-    //   height: 60px;
-    // }
+  }
+  //뭐여
+  .signupBox {
+    display: flex;
+    justify-content: center;
+  }
+  .signupButton {
+    cursor: pointer;
+    width: 258px;
+    height: 35px;
+    margin: 5px;
+    display: block;
+    border: none;
+    background-color: #0095f6;
+    color: white;
   }
 }
