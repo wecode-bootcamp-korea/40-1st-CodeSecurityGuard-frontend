@@ -25,7 +25,7 @@
 
   .nextSlideButton,
   .prevSlideButton {
-    @include flex(center, center);
+    @include flex;
     position: absolute;
     z-index: 1;
     width: 48px;
@@ -52,7 +52,7 @@
   }
 
   .indexLabel {
-    @include flex(center, center);
+    @include flex;
     position: absolute;
     z-index: 10;
     top: 85%;
