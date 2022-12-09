@@ -17,7 +17,7 @@ const ProductDetail = () => {
                 {INFO.description}
               </span>
               <div className="productDetailPriceReviewBox">
-                <div className="productDetailPrice">{INFO.price}원</div>
+                <div className="productDetailPrice">{INFO.price}22원</div>
               </div>
               <div className="productDetailQuantityBox">
                 <div className="productDetailQuantity">
