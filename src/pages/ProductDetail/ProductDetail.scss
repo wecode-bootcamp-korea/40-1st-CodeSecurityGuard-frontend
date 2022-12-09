@@ -1,45 +1,46 @@
-@import '/src/styles/variables.scss';
+@import '/src/styles/variables';
 
 .productDetailContainer {
   width: 1018px;
   height: 450px;
-  background-color: aqua;
-  margin: auto;
+  margin: 80px auto;
 }
 
 .productDetailArea {
   display: flex;
   width: 100%;
   height: fit-content;
-  background-color: darkgreen;
   gap: 60px;
 }
 
 .proudctDetailImageArea {
-  width: 430px;
-  height: 450px;
-  background-color: blueviolet;
+  img {
+    width: 430px;
+    height: 450px;
+    object-fit: cover;
+  }
 }
 
 .ProductDetailInfoArea {
   width: calc(100% - 490px);
   height: 450px;
-  background-color: deeppink;
 }
 
 .productDetailBrandName {
-  font-size: 18px;
   margin: 0 0 12px;
-  font-weight: 500;
+  color: #00388c;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .productDetailProductName {
+  margin-bottom: 10px;
   font-size: 28px;
   font-weight: 500;
-  margin-bottom: 10px;
 }
 
 .productDetailDescription {
+  color: #999999;
   font-size: 12px;
 }
 .productDetailQuantityBox {
@@ -47,9 +48,8 @@
   height: 76px;
 }
 .productDetailQuantity {
-  float: right;
   width: fit-content;
-  height: 30px;
+  float: right;
   background-color: aqua;
 
   input {
@@ -75,34 +75,61 @@
   display: flex;
   justify-content: space-between;
   margin: 22px 0;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
   input {
     text-align: center;
   }
 }
 
-.productDetailTotalPrice {
+.productDetailTotalPriceBox {
   @include flex(flex-end, center);
-  margin: 27px 0;
+  padding: 27px 0;
+
+  .productDetailTotalPrice {
+    margin-left: 10px;
+    color: #00388c;
+    font-size: 30px;
+    font-weight: 800;
+  }
 }
 
 .productDetailPrice {
+  height: 35px;
   font-size: 28px;
   font-weight: 600;
+}
+
+.productDetailQuantityValue {
+  border: none;
+  outline: 0;
 }
 
 .downQuantityBtn,
 .upQuantityBtn {
   width: 30px;
   height: 30px;
+  border: none;
+  background-color: #ffffff;
 }
 
 .productDetailCartButton,
 .productDetailOrderButton {
-  height: 55px;
   flex: 1;
+  height: 55px;
   border-radius: 5px;
-  background-color: rgb(61, 61, 154);
   font-size: 16px;
+}
+
+.productDetailCartButton {
+  border: 1px solid #00388c;
+  background-color: #ffffff;
+  color: #00388c;
+}
+.productDetailOrderButton {
+  border: none;
+  background-color: #00388c;
+  color: #ffffff;
 }
 
 .productDetailBtnBox {
