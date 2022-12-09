@@ -1,28 +1,45 @@
+@mixin flex($align-items: center, $justify-content: space-between) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
 @mixin font($font-size, $text-align) {
   font-size: $font-size;
   text-align: $text-align;
 }
 
-@mixin flex($display, $align-items, $justify-content) {
-  display: $display;
-  align-items: $align-items;
-  justify-content: $justify-content;
+@mixin formBoxStyle {
+  margin: 30px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 
-@mixin mobileSize {
-  width: 100px;
+@mixin titleStyle {
+  margin-left: 0px;
+  width: 170px;
+}
+
+@mixin inputStyle {
+  padding: 11px 13px;
+  border: 1px solid #dddddd;
+  border-radius: 7px;
+}
+
+@mixin inputSize {
+  width: 380px;
   height: 60px;
 }
 
-@mixin signupWrap {
-  margin-top: 30px;
-  display: block;
-  text-align: left;
-}
-
-.signUp {
+.signUpWrap {
   width: 665px;
   margin: 30px;
+
+  ::placeholder {
+    color: #dddddd;
+  }
+
   .signupTop {
     margin-bottom: 30px;
     border-bottom: 1px solid;
@@ -43,108 +60,82 @@
   }
 
   .userInfo {
-    display: block;
-    text-align: left;
-  }
-}
+    .form {
+      @include formBoxStyle;
+    }
 
-.form {
-  margin: 30px;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-}
+    .formTitle {
+      @include titleStyle;
+    }
 
-.agreeWrap {
-  display: flex;
-  align-items: center;
-}
-
-.formTitle {
-  width: 170px;
-}
-
-input {
-  width: 380px;
-  height: 60px;
-  padding: 11px 13px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  outline: none;
-}
-
-::placeholder {
-  color: #dddddd;
-}
-
-.agreeWrap {
-  margin: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.agreeTitle {
-  margin-left: 0px;
-  width: 170px;
-}
-
-input[type='checkbox'] {
-  background: url('../../../public/images/check.png') no-repeat center;
-  background-size: 40px 40px;
-  cursor: pointer;
-  appearance: none;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  border: 1px solid #999;
-  transition: background 0.2s;
-  margin-right: 20px;
-}
-
-input[type='checkbox']:checked {
-  background: url(../../../public/images/checked.png) no-repeat center;
-  background-size: 40px 40px;
-}
-
-label {
-  font-size: 35px;
-}
-
-.signUpInputMobile {
-  margin: 30px;
-  display: flex;
-  .phonNumberTitle {
-    margin-left: 0px;
-    width: 170px;
-  }
-  .mobileCenter {
-    @include mobileSize();
-  }
-  .mobileLast {
-    @include mobileSize();
-  }
-  .agreeWrap {
-    @include signupWrap();
-  }
-  .mobileInfo {
-    @include flex(flex, center, space-between);
-    select {
-      @include mobileSize();
+    input {
+      @include inputSize;
+      @include inputStyle;
     }
   }
-  //뭐여
-  .signupBox {
-    display: flex;
-    justify-content: center;
+
+  .agreeWrap {
+    @include formBoxStyle;
+
+    .agreeTitle {
+      margin-left: 0px;
+      width: 170px;
+    }
+    input[type='checkbox'] {
+      background: url('../../../public/images/check.png') no-repeat center;
+      background-size: 40px 40px;
+      cursor: pointer;
+      appearance: none;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      border: 1px solid #999;
+      transition: background 0.2s;
+      margin-right: 20px;
+    }
+    input[type='checkbox']:checked {
+      background: url(../../../public/images/checked.png) no-repeat center;
+      background-size: 40px 40px;
+    }
+    label {
+      font-size: 22px;
+    }
   }
-  .signupButton {
-    cursor: pointer;
-    width: 258px;
-    height: 35px;
+}
+
+.PhonenumberWrap {
+  @include formBoxStyle;
+
+  .phonenumberInfo {
+    @include flex(center, space-between);
+    @include inputSize;
+  }
+
+  .phonenumberTitle {
+    @include titleStyle;
+  }
+
+  select,
+  .phonenumberCenter,
+  .phonenumberLast {
+    @include inputStyle;
+    width: 100px;
+    height: 60px;
+  }
+}
+
+.submitWrap {
+  @include flex(center, center);
+
+  .submitButton {
+    width: 280px;
+    height: 65px;
     margin: 5px;
-    display: block;
     border: none;
-    background-color: #0095f6;
+    border-radius: 7px;
+    background-color: #09388c;
     color: white;
+    font-size: 22px;
+    cursor: pointer;
   }
 }
