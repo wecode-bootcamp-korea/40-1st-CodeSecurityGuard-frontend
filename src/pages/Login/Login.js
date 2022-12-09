@@ -18,7 +18,7 @@ function Login() {
   //TODO : api 요청 확인 시 이동 구현 필요 (이전페이지로 이동)
   const onSubmit = () => {
     inputValues.email.includes('@') && inputValues.password.length >= 8
-      ? navigate('/productdetail')
+      ? navigate('/productDetail')
       : alert('아이디와 비밀번호를 확인해주세요.');
   };
 
