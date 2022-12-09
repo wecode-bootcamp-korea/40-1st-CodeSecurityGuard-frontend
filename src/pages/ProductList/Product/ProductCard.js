@@ -2,16 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProductCard.scss';
 
-function ProductCard() {
+function ProductCard(props) {
+  const {
+    thumbnailLink,
+    thumbnailImage,
+    productName,
+    productPrice,
+    productInformation,
+  } = props;
+
   return (
     <productCard>
       <div className="productCardList">
         <div className="thumbnail">
-          <Link to="1">
+          <Link to={thumbnailLink}>
             <img
               className="thumbnailImage"
-              src="./images/1.jpg"
-              alt="상품이름"
+              src={thumbnailImage}
+              alt={productName}
             />
           </Link>
 
@@ -25,9 +33,9 @@ function ProductCard() {
         </div>
 
         <div className="description">
-          <div className="productName">상품 이름</div>
-          <div className="productPrice">상품 가격</div>
-          <div className="productDetail">상품 설명</div>
+          <div className="productName">{productName}</div>
+          <div className="productPrice">{productPrice}</div>
+          <div className="productInformation">{productInformation}</div>
         </div>
       </div>
     </productCard>

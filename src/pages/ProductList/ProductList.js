@@ -1,8 +1,16 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProductList.scss';
 import ProductCard from './Product/ProductCard';
 
 function ProductList() {
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/MOCK_DATA.json', { method: 'GET' })
+      .then(result => result.json())
+      .then(data => setProduct(data));
+  }, []);
+
   return (
     <div className="container">
       <div className="contents">
@@ -22,33 +30,19 @@ function ProductList() {
               </div>
               <div className="productList">
                 <ul>
-                  <li>
-                    <ProductCard />
-                  </li>
-                  <li>
-                    <ProductCard />
-                  </li>
-                  <li>
-                    <ProductCard />
-                  </li>
-                  <li>
-                    <ProductCard />
-                  </li>
-                  <li>
-                    <ProductCard />
-                  </li>
-                  <li>
-                    <ProductCard />
-                  </li>
-                  <li>
-                    <ProductCard />
-                  </li>
-                  <li>
-                    <ProductCard />
-                  </li>
-                  <li>
-                    <ProductCard />
-                  </li>
+                  {product.map(products => {
+                    return (
+                      <li id={products.id}>
+                        <ProductCard
+                          thumbnailLink={products.thumbnailLink}
+                          thumbnailImage={products.thumbnailImage}
+                          productName={products.productName}
+                          productPrice={products.productPrice}
+                          productInformation={products.productInformation}
+                        />
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
