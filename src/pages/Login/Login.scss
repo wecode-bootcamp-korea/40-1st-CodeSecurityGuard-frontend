@@ -1,0 +1,57 @@
+@mixin flex($align-items: center, $justify-content: center) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+.login {
+  .login_wrap {
+    @include flex();
+    width: 516px;
+    height: 407px;
+    margin: 35;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  input {
+    width: 380px;
+    height: 60px;
+    padding: 11px 13px !important;
+    margin-bottom: 16px !important;
+    background-color: #fafafa;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  }
+
+  button {
+    width: 375px;
+    height: 60px;
+    padding: 11px 13px !important;
+    margin-bottom: 16px !important;
+    background-color: #fafafa;
+    border: 1.5px solid #09388c;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #00388c;
+    cursor: pointer;
+
+    &.signin_button {
+      background-color: #09388c;
+      color: #ffffff;
+    }
+  }
+
+  .find_wrap {
+    @include flex();
+    color: #a1a1a1;
+    font-size: 14px;
+
+    div {
+      padding: 0 0 0 11px;
+      background: none;
+    }
+  }
+}
