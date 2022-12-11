@@ -84,6 +84,7 @@ const SignUp = () => {
         <p className="signUpRequired">필수입력사항</p>
       </div>
 
+      {/* TODO : input 아래 p태그로 유효성 검사결과 추가구현 예정 */}
       <div className="userInfo">
         {USER_FORM.map(info => {
           return (
@@ -136,7 +137,7 @@ const SignUp = () => {
           />
         </div>
       </div>
-
+      {/* TODO : 체크박스 체크 시 버튼활성화 추가구현 예정 */}
       <div className="agreeWrap">
         <div className="agreeTitle">이용약관동의</div>
         <input className="checkbox" type="checkbox" />
