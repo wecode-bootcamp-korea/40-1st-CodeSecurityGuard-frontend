@@ -1,0 +1,68 @@
+@import '../../styles/mixins/flex.scss';
+$primary-color: #00388d;
+
+.navCategoryWrap {
+  position: absolute;
+
+  .categoryList {
+    background-color: #fff;
+    position: relative;
+    border: 1px solid #dddedd;
+
+    ul {
+      grid-gap: 0;
+    }
+
+    .categoryListMain {
+      font-size: 18px;
+      @include columnFlex;
+
+      li {
+        display: flex;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 0 18px;
+        align-items: center;
+        position: relative;
+        width: 274px;
+        height: 44px;
+        cursor: pointer;
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+
+        .mainNameWrapper {
+          margin-left: 12px;
+        }
+      }
+    }
+
+    .categoryListSub {
+      background-color: #fff;
+      border: 1px solid #dddedd;
+      @include columnFlex;
+      position: absolute;
+      left: 274px;
+      top: 0px;
+
+      :hover {
+        background-color: #dddedd;
+        text-decoration: underline;
+        color: $primary-color;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 0 18px;
+        position: relative;
+        width: 274px;
+        height: 44px;
+      }
+    }
+  }
+}
