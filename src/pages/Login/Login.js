@@ -23,7 +23,7 @@ function Login() {
 
   //TODO : api 요청 확인 시 이동 구현 필요 (이전페이지로 이동)
   const signIn = () => {
-    fetch('api 주소', {
+    fetch('http://10.58.52.239:8000/users/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -33,17 +33,17 @@ function Login() {
     })
       .then(response => response.json())
       .then(data => {
-        if (data.message === 'SUCCESS') {
+        if (data.accessToken) {
           localStorage.setItem('token', data.accessToken);
-          goToMain();
+          navigate('/productDetail');
         } else {
           alert('이메일, 비밀번호가 일치하지 않습니다');
         }
       });
   };
 
-  const goToMain = () => {
-    navigate('/');
+  const moveToSignUp = () => {
+    navigate('/signup');
   };
 
   return (
@@ -69,7 +69,9 @@ function Login() {
         <button className="signin_button" onClick={onSubmit}>
           로그인
         </button>
-        <button className="signup_button">회원가입</button>
+        <button className="signup_button" onClick={moveToSignUp}>
+          회원가입
+        </button>
         <div className="find_wrap">
           <div>
             <a className="find_email">이메일 찾기</a>
