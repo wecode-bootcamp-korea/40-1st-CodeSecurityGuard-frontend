@@ -25,29 +25,13 @@ const SignUp = () => {
 
   const emailRegExp =
     /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
-
   const passwordRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,12}$/;
-
-  console.log('이메일 유효성 검사:', emailRegExp.test(formValue.email));
-  console.log('패스워드 유효성 검사:', passwordRegExp.test(formValue.password));
 
   const isValidate =
     formValue.password === formValue.passwordCheck &&
     formValue.userName.length >= 2 &&
     formValue.phoneNumberCenter.length == 4 &&
     formValue.phoneNumberLast.length == 4;
-
-  console.log(
-    '비밀번호확인 유효성 검사:',
-    formValue.password === formValue.passwordCheck
-  );
-
-  console.log('이름 유효성 검사:', formValue.userName.length >= 2);
-  console.log(
-    '폰번호 유효성 검사:',
-    formValue.phoneNumberCenter.length == 4 &&
-      formValue.phoneNumberLast.length == 4
-  );
 
   const onSignUp = e => {
     e.preventDefault();
