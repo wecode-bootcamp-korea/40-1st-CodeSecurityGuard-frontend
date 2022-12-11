@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+mport React, { useState, useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import './SignUp.scss';
 
@@ -82,31 +82,28 @@ const SignUp = () => {
 
   const onSignUp = e => {
     e.preventDefault();
-    fetch('API주소', {
+    fetch('http://10.58.52.239:8000/users/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify({
         email: formValue.email,
         password: formValue.password,
-        name: formValue.username,
-        phone_number:
-          '010-' +
-          formValue.phoneNumberCenter +
-          '-' +
-          formValue.phoneNumberLast,
+        name: formValue.userName,
+        phoneNumber:
+          '010' + formValue.phoneNumberCenter + formValue.phoneNumberLast,
       }),
     })
       .then(response => response.json())
 
       .then(data => {
-        if (data.MESSAGE === 'SUCCESS') {
+        if (data.message === 'USER_CREATED') {
           return (
             alert('회원가입 되었습니다!'),
             navigate('/login'),
             localStorage.setItem('token', data.accessToken)
           );
-        } else if (data.MESSAGE === 'DUPLICATE EMAIL') {
-          alert('중복된 회원정보입니다!');
+        } else {
+          alert('회원가입에 실패했습니다!');
         }
       });
 
@@ -122,13 +119,13 @@ const SignUp = () => {
         <p className="signUpRequired">필수입력사항</p>
       </div>
 
-      {/* ❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️*/}
       <div className="userInfo">
         {USER_FORM.map(info => {
           return (
             <div className="form" key={info.id}>
               <div className="formTitle">{info.formTitle}</div>
               <input
+                //TODO : password type:password 로 변경예정 (유효성검사 위해)
                 name={info.name}
                 value={formValue.name}
                 className="formInput"
