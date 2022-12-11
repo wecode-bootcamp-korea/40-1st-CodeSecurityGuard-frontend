@@ -94,7 +94,7 @@
   }
   input[type='checkbox'] {
     background: url('../../../public/images/check.png') no-repeat center;
-    background-size: 40px 40px;
+    background-size: 25px 25px;
     cursor: pointer;
     appearance: none;
     width: 1rem;
@@ -106,7 +106,7 @@
   }
   input[type='checkbox']:checked {
     background: url('../../../public/images/checked.png') no-repeat center;
-    background-size: 40px 40px;
+    background-size: 20px 20px;
   }
   label {
     font-size: 22px;

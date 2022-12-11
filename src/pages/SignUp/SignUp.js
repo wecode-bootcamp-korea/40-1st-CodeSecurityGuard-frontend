@@ -1,11 +1,8 @@
-mport React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import './SignUp.scss';
 
 const SignUp = () => {
-  //체크박스
-  // const isChecked = checkbox.checked;
-
   const navigate = useNavigate();
 
   const [formValue, setFormValue] = useState({
@@ -17,16 +14,6 @@ const SignUp = () => {
     phoneNumberLast: '',
   });
 
-  // const {
-  //   email,
-  //   password,
-  //   checkPassword,
-  //   userName,
-  //   phoneNumberCenter,
-  //   phoneNumberLast,
-  // } = formValue;
-
-  //구조분해할당 - input 값 저장
   const handleForm = e => {
     const { name, value } = e.target;
     setFormValue({
@@ -36,14 +23,6 @@ const SignUp = () => {
   };
   console.log(formValue);
 
-  //테스트: 이메일, 패스워드, 패스워드 확인
-  // const isEmailValid = EmailRegExp.tes(formValue.email);
-  // const isPasswordValid = PasswordRegExp.test(formValue.password);
-  // const isPasswordChecked =
-  //   formValue.password &&
-  //   formValue.checkPassword &&
-  //   formValue.password === formValue.checkPassword;
-
   const emailRegExp =
     /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
 
@@ -52,14 +31,7 @@ const SignUp = () => {
   console.log('이메일 유효성 검사:', emailRegExp.test(formValue.email));
   console.log('패스워드 유효성 검사:', passwordRegExp.test(formValue.password));
 
-  //유효성 검사
   const isValidate =
-    // formValue.email.test(
-    //   /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/
-    // ) &&
-    // formValue.password.test(
-    //   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,12}$/
-    // ) &&
     formValue.password === formValue.passwordCheck &&
     formValue.userName.length >= 2 &&
     formValue.phoneNumberCenter.length == 4 &&
@@ -76,9 +48,6 @@ const SignUp = () => {
     formValue.phoneNumberCenter.length == 4 &&
       formValue.phoneNumberLast.length == 4
   );
-
-  // &&formValue.phoneNumberCenter.length + formValue.phoneNumberCenter.length ==
-  //   8;
 
   const onSignUp = e => {
     e.preventDefault();
@@ -106,10 +75,6 @@ const SignUp = () => {
           alert('회원가입에 실패했습니다!');
         }
       });
-
-    // .catch(error => {
-    //   alert('회원정보를 다시 확인해 주세요.');
-    // });
   };
   return (
     <div className="signUpWrap">
