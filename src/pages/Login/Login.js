@@ -15,11 +15,35 @@ function Login() {
     setInputValues({ ...inputValues, [name]: value });
   };
 
-  //TODO : api 요청 확인 시 이동 구현 필요 (이전페이지로 이동)
   const onSubmit = () => {
     inputValues.email.includes('@') && inputValues.password.length >= 8
-      ? navigate('/productDetail')
-      : alert('아이디와 비밀번호를 확인해주세요.');
+      ? signIn()
+      : alert('이메일, 비밀번호를 올바르게 입력해주세요');
+  };
+
+  //TODO : api 요청 확인 시 이동 구현 필요 (이전페이지로 이동)
+  const signIn = () => {
+    fetch('api 주소', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: inputValues.email,
+        password: inputValues.password,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.message === 'SUCCESS') {
+          localStorage.setItem('token', data.accessToken);
+          goToMain();
+        } else {
+          alert('이메일, 비밀번호가 일치하지 않습니다');
+        }
+      });
+  };
+
+  const goToMain = () => {
+    navigate('/');
   };
 
   return (
@@ -46,7 +70,6 @@ function Login() {
           로그인
         </button>
         <button className="signup_button">회원가입</button>
-
         <div className="find_wrap">
           <div>
             <a className="find_email">이메일 찾기</a>
