@@ -49,10 +49,10 @@ function Login() {
 
   return (
     <div className="login">
-      <div className="login_wrap">
+      <div className="loginWrap">
         <input
           name="email"
-          className="input_email"
+          className="inputEmail"
           type="text"
           placeholder="이메일을 입력해주세요"
           value={inputValues.email}
@@ -61,24 +61,24 @@ function Login() {
 
         <input
           name="password"
-          className="input_password"
+          className="inputPassword"
           type="password"
           placeholder="비밀번호를 입력해주세요"
           value={inputValues.password}
           onChange={handleInput}
         />
-        <button className="signin_button" onClick={onSubmit}>
+        <button className="signInButton" onClick={onSubmit}>
           로그인
         </button>
-        <button className="signup_button" onClick={moveToSignUp}>
+        <button className="signUpButton" onClick={moveToSignUp}>
           회원가입
         </button>
-        <div className="find_wrap">
+        <div className="findWrap">
           <div>
-            <a className="find_email">이메일 찾기</a>
+            <a className="findEmail">이메일 찾기</a>
           </div>
           <div>
-            <a className="find_askpassword">비밀번호 찾기</a>
+            <a className="findAskPassword">비밀번호 찾기</a>
           </div>
         </div>
       </div>
