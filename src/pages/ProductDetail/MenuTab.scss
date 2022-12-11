@@ -1,0 +1,22 @@
+.productInfoTab {
+  margin: 0 auto;
+}
+
+.productDeliveryInfo,
+.productExchangeInfo {
+  padding: 50px 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.deliveryInfoTitle,
+.exchangeInfoTitle {
+  padding: 30px 0;
+  color: #333333;
+}
+.deliveryInfoList,
+.exchangeInfoList {
+  li {
+    color: #999999;
+    line-height: 1.5;
+  }
+}
