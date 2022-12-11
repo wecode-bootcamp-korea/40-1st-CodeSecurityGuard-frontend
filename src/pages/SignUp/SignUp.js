@@ -17,14 +17,14 @@ const SignUp = () => {
     phoneNumberLast: '',
   });
 
-  const {
-    email,
-    password,
-    checkPassword,
-    userName,
-    phoneNumberCenter,
-    phoneNumberLast,
-  } = formValue;
+  // const {
+  //   email,
+  //   password,
+  //   checkPassword,
+  //   userName,
+  //   phoneNumberCenter,
+  //   phoneNumberLast,
+  // } = formValue;
 
   //구조분해할당 - input 값 저장
   const handleForm = e => {
@@ -35,11 +35,6 @@ const SignUp = () => {
     });
   };
   console.log(formValue);
-
-  //정규표현식 검사
-  // const EmailRegExp =
-  //   /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
-  // const PasswordRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,12}$/;
 
   //테스트: 이메일, 패스워드, 패스워드 확인
   // const isEmailValid = EmailRegExp.tes(formValue.email);
@@ -59,10 +54,28 @@ const SignUp = () => {
 
   //유효성 검사
   const isValidate =
-    // formValue.email.includes('@' && '.com') &&
-    // formValue.password.length >= 8 &&
-    formValue.password === formValue.checkPassword &&
-    formValue.userName.length >= 2;
+    // formValue.email.test(
+    //   /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/
+    // ) &&
+    // formValue.password.test(
+    //   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,12}$/
+    // ) &&
+    formValue.password === formValue.passwordCheck &&
+    formValue.userName.length >= 2 &&
+    formValue.phoneNumberCenter.length == 4 &&
+    formValue.phoneNumberLast.length == 4;
+
+  console.log(
+    '비밀번호확인 유효성 검사:',
+    formValue.password === formValue.passwordCheck
+  );
+
+  console.log('이름 유효성 검사:', formValue.userName.length >= 2);
+  console.log(
+    '폰번호 유효성 검사:',
+    formValue.phoneNumberCenter.length == 4 &&
+      formValue.phoneNumberLast.length == 4
+  );
 
   // &&formValue.phoneNumberCenter.length + formValue.phoneNumberCenter.length ==
   //   8;
