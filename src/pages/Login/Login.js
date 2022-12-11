@@ -22,6 +22,7 @@ function Login() {
   };
 
   //TODO : api 요청 확인 시 이동 구현 필요 (이전페이지로 이동)
+  //TODO : 회원가입 성공시 alert 창 띄우기 vs 바로 이전페이지로 넘기기
   const signIn = () => {
     fetch('http://10.58.52.239:8000/users/signin', {
       method: 'POST',
