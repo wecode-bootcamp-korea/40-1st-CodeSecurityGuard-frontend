@@ -65,7 +65,6 @@ const Nav = () => {
           </div>
           <div className="rightMenuWrapper" />
         </div>
-        <div className="navCategory">{/* <CategoryList /> */}</div>
       </div>
     </nav>
   );

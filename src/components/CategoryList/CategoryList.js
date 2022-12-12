@@ -4,6 +4,7 @@ import './CategoryList.scss';
 const CategoryList = props => {
   const [mainNameList, setMainNameList] = useState([]);
   const [currentId, setCurrentId] = useState(0);
+  const onMouseEnterTab = id => e => setCurrentId(id);
 
   useEffect(() => {
     fetch('/data/categoryList.json', {
@@ -25,23 +26,22 @@ const CategoryList = props => {
                 className="mainCategory"
                 key={id}
                 data={mainname}
-                onMouseEnter={() => setCurrentId(id)}
+                onMouseEnter={onMouseEnterTab(id)}
               >
                 <div className="mainNameIcon">
                   <img key={id} src={icon} alt={mainname} />
                 </div>
                 <div className="mainNameWrapper">{mainname}</div>
-                {currentId === id && subcategory && (
-                  <ul className="categoryListSub">
-                    {subcategory.map(({ id, name }) => {
+                <ul className="categoryListSub">
+                  {currentId === id &&
+                    subcategory?.map(({ id, name }) => {
                       return (
                         <li className="subCategory" key={id} data={name}>
                           {name}
                         </li>
                       );
                     })}
-                  </ul>
-                )}
+                </ul>
               </li>
             );
           })}

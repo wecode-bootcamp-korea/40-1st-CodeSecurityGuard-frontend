@@ -127,13 +127,6 @@ $primary-color: #00388d;
             font-size: 18px;
             font-weight: 700;
             color: black;
-
-            .recommendLink,
-            .newProductLink,
-            .bestProductLink &::selection {
-              color: $primary-color;
-              border-bottom: 2px solid $primary-color;
-            }
           }
         }
       }

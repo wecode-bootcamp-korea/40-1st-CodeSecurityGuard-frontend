@@ -1,6 +1,6 @@
 @import '../../styles/mixins/flex.scss';
-$primary-color: #00388d;
-
+@import '../../styles/variables.scss';
+// $primary-color: #00388d;
 .navCategoryWrap {
   position: absolute;
 
