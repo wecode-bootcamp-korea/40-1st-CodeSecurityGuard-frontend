@@ -5,7 +5,7 @@
 }
 
 .login {
-  .login_wrap {
+  .loginWrap {
     @include flex();
     width: 516px;
     height: 407px;
@@ -38,13 +38,13 @@
     color: #00388c;
     cursor: pointer;
 
-    &.signin_button {
+    &.signInButton {
       background-color: #09388c;
       color: #ffffff;
     }
   }
 
-  .find_wrap {
+  .findWrap {
     @include flex();
     color: #a1a1a1;
     font-size: 14px;
