@@ -5,7 +5,7 @@ const List = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.52.244:3000/products/', { method: 'GET' })
+    fetch('http://10.58.52.118:8000/products/')
       .then(response => response.json())
       .then(result => setProducts(result.data));
   }, []);

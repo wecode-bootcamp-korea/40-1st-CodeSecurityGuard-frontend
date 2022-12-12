@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './MenuTab.scss';
 
 const ProductInfoTab = () => {
@@ -99,7 +99,7 @@ const MenuTab = id => {
   const [currentTab, setCurrentTab] = useState('상품설명');
 
   return (
-    <div className="menuTab">
+    <div className="productDetailMenuTab">
       <ul className="productDetailTabs">
         {TAB_ARR.map((tab, index) => (
           <li
@@ -115,7 +115,7 @@ const MenuTab = id => {
           </li>
         ))}
       </ul>
-      <div className="productDetailContent">{MAPPING_OBJ[currentTab]}</div>
+      <div className="productDetailContent">{TAB_MAP[currentTab]}</div>
     </div>
   );
 };
@@ -124,7 +124,7 @@ export default MenuTab;
 
 const TAB_ARR = ['상품설명', '후기', '상세정보'];
 
-const MAPPING_OBJ = {
+const TAB_MAP = {
   상품설명: <ProductInfoTab />,
   후기: <ReviewTab />,
   상세정보: <ProductDetailTab />,

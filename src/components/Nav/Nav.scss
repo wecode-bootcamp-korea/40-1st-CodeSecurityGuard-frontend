@@ -1,0 +1,125 @@
+@import '../../styles/mixins/flex';
+
+$primary-color: #00388d;
+
+.navBox {
+  @include columnFlex;
+  max-width: 1050px;
+  height: auto;
+  margin: 14px auto 0;
+  background-color: white;
+
+  .headerElement {
+    .headerLink {
+      @include flex(flex-end, center);
+      font-size: 14px;
+      gap: 26px;
+
+      .signUpLink {
+        a {
+          color: $primary-color;
+        }
+      }
+
+      .loginLink {
+        a {
+          color: lightgray;
+        }
+      }
+    }
+
+    .searchBarForm {
+      @include flex(space-between, center);
+      margin: 20px 0;
+
+      .weselyLogo {
+        a {
+          color: $primary-color;
+          font-size: 50px;
+        }
+      }
+
+      .headerSearchBox {
+        @include flex(space-between, center);
+        width: 440px;
+        height: 52px;
+        padding: 0 10px 0 22px;
+        border: 1px solid $primary-color;
+        border-radius: 5px;
+
+        .searchInput {
+          width: 300px;
+          height: 30px;
+          border-style: none;
+
+          .submitButton {
+            border-style: none;
+            background-color: white;
+          }
+        }
+
+        img {
+          width: 28px;
+          height: 28px;
+          color: $primary-color;
+        }
+      }
+
+      .cartButtonWrapper {
+        display: flex;
+        justify-content: end;
+        width: 150px;
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+  .navWrapper {
+    @include flex(space-between, center);
+    width: 1050px;
+    height: 60px;
+
+    .navLeft {
+      display: flex;
+      position: relative;
+      align-items: center;
+      width: 150px;
+      height: 100%;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      gap: 16px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .tabMenuWrapper {
+      .tabMenu {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        gap: 80px;
+        a {
+          color: black;
+          font-size: 18px;
+          font-weight: 700;
+          &::selection {
+            border-bottom: 2px solid $primary-color;
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    .rightMenuWrapper {
+      width: 150px;
+      height: 60px;
+    }
+  }
+}

@@ -46,7 +46,7 @@ const ProductDetail = () => {
               <span className="productDetailDescription">{description}</span>
               <div className="productDetailPriceReviewBox">
                 <div className="productDetailPrice">
-                  {[price].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원
+                  {[price].toLocaleString()}원
                 </div>
               </div>
               <div className="productDetailQuantityBox">
@@ -68,10 +68,7 @@ const ProductDetail = () => {
               <div className="productDetailTotalPriceBox">
                 <span>총 상품금액:</span>
                 <p className="productDetailTotalPrice">
-                  {[price * quantityValue]
-                    .toString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                  원
+                  {[price * quantityValue].toLocaleString()}원
                 </p>
               </div>
               <div className="productDetailBtnBox">
@@ -90,15 +87,3 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
-
-const INFOS = [
-  {
-    id: 1,
-    brandid: '라픈워크',
-    name: '히알라라산 수분 크림',
-    description: '속건조를 잡아주는 8중 복합 히알라라산 수분 크림',
-    price: 8900,
-    thumbnail_image_url:
-      'https://images.unsplash.com/photo-1638609927040-8a7e97cd9d6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80',
-  },
-];
