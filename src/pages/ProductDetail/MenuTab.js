@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import './MenuTab.scss';
 
 const ProductInfoTab = () => {
+  const [products, setProducts] = useState({});
+
+  const params = useParams();
+  const productId = params.id;
+
+  useEffect(() => {
+    fetch(`/data/MOCK_DATA.json`)
+      .then(response => response.json())
+      .then(result => setProducts(result[productId]));
+  }, [productId]);
+
   return (
     <div className="productInfoTab">
-      <img
-        alt="상품설명"
-        src="https://wiselycompany.com/web/upload/NNEditor/20221117/ow-moisturizingcream-detail-info-1-pc.png"
-      />
+      <img alt="상품설명" src={products.thumbnailImageUrl} />
       <div className="productDeliveryInfo">
         <div className="deliveryInfoTitle"> 배송정보</div>
         <div className="deliveryInfoList">
@@ -79,13 +88,19 @@ const ReviewTab = () => {
     </>
   );
 };
-
-const MenuTab = () => {
+const ProductDetailTab = () => {
+  return (
+    <div className="productDetailTabBox">
+      <div>상세 정보가 없습니다.</div>
+    </div>
+  );
+};
+const MenuTab = id => {
   const [currentTab, setCurrentTab] = useState('상품설명');
 
   return (
     <div className="menuTab">
-      <ul className="tabs">
+      <ul className="productDetailTabs">
         {TAB_ARR.map((tab, index) => (
           <li
             key={index}
@@ -112,7 +127,5 @@ const TAB_ARR = ['상품설명', '후기', '상세정보'];
 const MAPPING_OBJ = {
   상품설명: <ProductInfoTab />,
   후기: <ReviewTab />,
-  상세정보: (
-    <img src="https://wiselycompany.com/web/upload/NNEditor/20221117/ow-moisturizingcream-detail-legal-productinfo.png" />
-  ),
+  상세정보: <ProductDetailTab />,
 };

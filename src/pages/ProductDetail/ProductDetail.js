@@ -29,7 +29,7 @@ const ProductDetail = () => {
   }, [productId]);
 
   console.log(products);
-  const { brand_id, name, thumbnail_image_url, description, price, ...others } =
+  const { brandId, name, thumbnailImageUrl, description, price, ...others } =
     products;
 
   return (
@@ -38,10 +38,10 @@ const ProductDetail = () => {
         <div className="productDetailContentsBox">
           <div className="productDetailArea">
             <div className="productDetailImageArea">
-              <img alt="productImage" src={thumbnail_image_url} />
+              <img alt="productImage" src={thumbnailImageUrl} />
             </div>
             <div className="ProductDetailInfoArea">
-              <h3 className="productDetailBrandName">{brand_id}</h3>
+              <h3 className="productDetailBrandName">{brandId}</h3>
               <h1 className="productDetailProductName">{name}</h1>
               <span className="productDetailDescription">{description}</span>
               <div className="productDetailPriceReviewBox">

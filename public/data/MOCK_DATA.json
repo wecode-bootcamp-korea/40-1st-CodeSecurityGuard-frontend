@@ -1,82 +1,10 @@
-[
-  {
-    "id": 1,
-    "brand_id": "Cello",
-    "name": "McWard",
-    "thumbnail_image_url": "http://dummyimage.com/104x100.png/ff4444/ffffff",
-    "description": "Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.",
-    "price": 5002
-  },
-  {
-    "id": 2,
-    "brand_id": "Rickie",
-    "name": "de Guise",
-    "thumbnail_image_url": "http://dummyimage.com/213x100.png/ff4444/ffffff",
-    "description": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-    "price": 9723
-  },
-  {
-    "id": 3,
-    "brand_id": "Javier",
-    "name": "Britch",
-    "thumbnail_image_url": "http://dummyimage.com/162x100.png/ff4444/ffffff",
-    "description": "Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
-    "price": 5703
-  },
-  {
-    "id": 4,
-    "brand_id": "Scarlett",
-    "name": "Mealiffe",
-    "thumbnail_image_url": "http://dummyimage.com/134x100.png/dddddd/000000",
-    "description": "Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
-    "price": 4966
-  },
-  {
-    "id": 5,
-    "brand_id": "Arline",
-    "name": "Weldrake",
-    "thumbnail_image_url": "http://dummyimage.com/214x100.png/cc0000/ffffff",
-    "description": "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
-    "price": 2398
-  },
-  {
-    "id": 6,
-    "brand_id": "Stanfield",
-    "name": "Andreev",
-    "thumbnail_image_url": "http://dummyimage.com/165x100.png/dddddd/000000",
-    "description": "Proin risus.",
-    "price": 9952
-  },
-  {
-    "id": 7,
-    "brand_id": "Gleda",
-    "name": "Josipovic",
-    "thumbnail_image_url": "http://dummyimage.com/136x100.png/dddddd/000000",
-    "description": "Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
-    "price": 9773
-  },
-  {
-    "id": 8,
-    "brand_id": "Benji",
-    "name": "Bernardinelli",
-    "thumbnail_image_url": "http://dummyimage.com/133x100.png/cc0000/ffffff",
-    "description": "Nunc purus.",
-    "price": 5200
-  },
-  {
-    "id": 9,
-    "brand_id": "Thomas",
-    "name": "Stayt",
-    "thumbnail_image_url": "http://dummyimage.com/179x100.png/dddddd/000000",
-    "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
-    "price": 2936
-  },
-  {
-    "id": 10,
-    "brand_id": "Marcellina",
-    "name": "Seif",
-    "thumbnail_image_url": "http://dummyimage.com/120x100.png/dddddd/000000",
-    "description": "Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.",
-    "price": 2791
-  }
-]
+[{"id":1,"brandId":"Gelya","name":"Whooley","thumbnailImageUrl":"http://dummyimage.com/107x100.png/5fa2dd/ffffff","description":"Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.","price":1919},
+{"id":2,"brandId":"Tracey","name":"Moyle","thumbnailImageUrl":"http://dummyimage.com/131x100.png/5fa2dd/ffffff","description":"Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.","price":5954},
+{"id":3,"brandId":"Nalani","name":"Sharpus","thumbnailImageUrl":"http://dummyimage.com/206x100.png/5fa2dd/ffffff","description":"Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.","price":2655},
+{"id":4,"brandId":"Lita","name":"Stringfellow","thumbnailImageUrl":"http://dummyimage.com/230x100.png/dddddd/000000","description":"Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.","price":5196},
+{"id":5,"brandId":"Aurore","name":"Dimmack","thumbnailImageUrl":"http://dummyimage.com/173x100.png/dddddd/000000","description":"Quisque id justo sit amet sapien dignissim vestibulum.","price":7053},
+{"id":6,"brandId":"Torey","name":"Houselee","thumbnailImageUrl":"http://dummyimage.com/243x100.png/dddddd/000000","description":"Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.","price":7359},
+{"id":7,"brandId":"Theresita","name":"Astlatt","thumbnailImageUrl":"http://dummyimage.com/108x100.png/ff4444/ffffff","description":"Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.","price":6384},
+{"id":8,"brandId":"Bunny","name":"Godly","thumbnailImageUrl":"http://dummyimage.com/227x100.png/5fa2dd/ffffff","description":"Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.","price":1842},
+{"id":9,"brandId":"Swen","name":"Sutcliffe","thumbnailImageUrl":"http://dummyimage.com/111x100.png/5fa2dd/ffffff","description":"Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.","price":3363},
+{"id":10,"brandId":"Silva","name":"Backs","thumbnailImageUrl":"http://dummyimage.com/209x100.png/5fa2dd/ffffff","description":"Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.","price":2372}]

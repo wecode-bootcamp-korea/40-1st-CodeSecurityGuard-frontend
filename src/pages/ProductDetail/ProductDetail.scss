@@ -4,6 +4,10 @@
   width: 1018px;
   height: 450px;
   margin: 80px auto;
+
+  button {
+    cursor: pointer;
+  }
 }
 
 .productDetailArea {
@@ -140,59 +144,4 @@
 .menuTab {
   width: 1018px;
   margin: auto;
-}
-.tabs {
-  display: flex;
-
-  .productDetailTapList {
-    flex: 1;
-    height: 60px;
-    border: 1px solid #dddddd;
-    background-color: #fafafa;
-    color: #666666;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 60px;
-    text-align: center;
-  }
-
-  .productDetailTapSelected {
-    flex: 1;
-    height: 60px;
-    border: 1px solid #dddddd;
-    border-bottom: none;
-    background-color: #ffffff;
-    color: #00388c;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 60px;
-    text-align: center;
-  }
-}
-
-.productDetailContent {
-  img {
-    width: 1018px;
-    object-fit: cover;
-    margin-top: 30px;
-  }
-}
-
-.productDetailContent {
-  margin: 50px 0;
-}
-.productReviewTab {
-  a {
-    font-size: 16px;
-  }
-  @include flex(space-between, center);
-  padding: 16px 0;
-  border-bottom: 2px solid black;
-  font-size: 20px;
-}
-.productReviewListBox {
-  margin: 100px 0;
-  color: #707680;
-  line-height: 25px;
-  text-align: center;
 }
