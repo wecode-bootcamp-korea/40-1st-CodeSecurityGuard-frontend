@@ -3,42 +3,32 @@ import { Link } from 'react-router-dom';
 import './ProductCard.scss';
 
 function ProductCard(props) {
-  const {
-    thumbnailLink,
-    thumbnailImage,
-    productName,
-    productPrice,
-    productInformation,
-  } = props;
+  const { thumbnailImageUrl, name, price, discountedPrice, description } =
+    props;
 
   return (
-    <productCard>
-      <div className="productCardList">
-        <div className="thumbnail">
-          <Link to={thumbnailLink}>
-            <img
-              className="thumbnailImage"
-              src={thumbnailImage}
-              alt={productName}
-            />
-          </Link>
+    <div className="productCardList">
+      <div className="thumbnail">
+        <Link to="productdetail/">
+          <img className="thumbnailImage" src={thumbnailImageUrl} alt={name} />
+        </Link>
 
-          <Link to="2">
-            <img
-              className="cartImage"
-              src="./images/carticonimage.jpg"
-              alt="카트아이콘"
-            />
-          </Link>
-        </div>
-
-        <div className="description">
-          <div className="productName">{productName}</div>
-          <div className="productPrice">{productPrice}</div>
-          <div className="productInformation">{productInformation}</div>
-        </div>
+        <Link to="#">
+          <img
+            className="cartImage"
+            src="./images/carticonimage.jpg"
+            alt="카트아이콘"
+          />
+        </Link>
       </div>
-    </productCard>
+
+      <div className="description">
+        <div className="productName">{name}</div>
+        <div className="productPrice">{price}</div>
+        <div className="discountedPrice">{discountedPrice}</div>
+        <div className="productInformation">{description}</div>
+      </div>
+    </div>
   );
 }
 

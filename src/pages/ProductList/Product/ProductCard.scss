@@ -1,16 +1,22 @@
 .productCardList {
   max-width: 400px;
 
+  a {
+    text-decoration-line: none;
+  }
+
   .thumbnail {
     position: relative;
 
     max-width: 400px;
     height: auto;
     max-height: 400px;
+    overflow: hidden;
 
     .thumbnailImage {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
 
     .cartImage {
@@ -44,8 +50,4 @@
       margin-left: 10px;
     }
   }
-}
-
-a {
-  text-decoration-line: none;
 }

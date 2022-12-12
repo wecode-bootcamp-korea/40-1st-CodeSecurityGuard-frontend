@@ -1,50 +1,50 @@
 [
   {
     "id": 1,
-    "thumbnailLink": "1",
-    "thumbnailImage": "./images/1.jpg",
-    "productName": "1E+02",
-    "productPrice": 9750,
-    "productInformation": "בְּרֵאשִׁית, בָּרָא אֱלֹהִים, אֵת הַשָּׁמַיִם, וְאֵת הָאָרֶץ"
+
+    "thumbnailImageUrl": "./images/1.jpg",
+    "name": "1E+02",
+    "price": 9750,
+    "description": "בְּרֵאשִׁית, בָּרָא אֱלֹהִים, אֵת הַשָּׁמַיִם, וְאֵת הָאָרֶץ"
   },
   {
     "id": 2,
-    "thumbnailLink": "http://geocities.com/ultricies/eu/nibh/quisque/id/justo/sit.aspx?luctus=tempor&et=turpis&ultrices=nec&posuere=euismod&cubilia=scelerisque&curae=quam&mauris=turpis&viverra=adipiscing&diam=lorem&vitae=vitae&quam=mattis&suspendisse=nibh&potenti=ligula&nullam=nec&porttitor=sem&lacus=duis&at=aliquam&turpis=convallis&donec=nunc&posuere=proin&metus=at&vitae=turpis&ipsum=a&aliquam=pede&non=posuere&mauris=nonummy&morbi=integer",
-    "thumbnailImage": "./images/2.jpg",
-    "productName": "　",
-    "productPrice": 17928,
-    "productInformation": "𠜎𠜱𠝹𠱓𠱸𠲖𠳏"
+
+    "thumbnailImageUrl": "./images/2.jpg",
+    "name": "　",
+    "price": 17928,
+    "description": "𠜎𠜱𠝹𠱓𠱸𠲖𠳏"
   },
   {
     "id": 3,
-    "thumbnailLink": "http://marriott.com/est/phasellus.jpg?donec=consequat&semper=varius&sapien=integer&a=ac&libero=leo&nam=pellentesque&dui=ultrices&proin=mattis&leo=odio&odio=donec&porttitor=vitae&id=nisi&consequat=nam&in=ultrices&consequat=libero&ut=non&nulla=mattis&sed=pulvinar&accumsan=nulla&felis=pede&ut=ullamcorper&at=augue&dolor=a&quis=suscipit&odio=nulla&consequat=elit&varius=ac&integer=nulla&ac=sed&leo=vel&pellentesque=enim&ultrices=sit&mattis=amet&odio=nunc&donec=viverra&vitae=dapibus&nisi=nulla&nam=suscipit&ultrices=ligula&libero=in&non=lacus&mattis=curabitur&pulvinar=at&nulla=ipsum&pede=ac&ullamcorper=tellus&augue=semper&a=interdum&suscipit=mauris&nulla=ullamcorper&elit=purus&ac=sit&nulla=amet&sed=nulla",
-    "thumbnailImage": "./images/3.jpg",
+
+    "thumbnailImageUrl": "./images/3.jpg",
     "productName": "NULL",
-    "productPrice": 12092,
-    "productInformation": "␣"
+    "price": 12092,
+    "description": "␣"
   },
   {
     "id": 4,
-    "thumbnailLink": "http://twitter.com/felis.aspx?cubilia=justo&curae=lacinia&mauris=eget&viverra=tincidunt&diam=eget&vitae=tempus&quam=vel&suspendisse=pede&potenti=morbi&nullam=porttitor&porttitor=lorem&lacus=id&at=ligula&turpis=suspendisse&donec=ornare&posuere=consequat&metus=lectus&vitae=in&ipsum=est&aliquam=risus&non=auctor&mauris=sed&morbi=tristique&non=in&lectus=tempus&aliquam=sit&sit=amet&amet=sem&diam=fusce&in=consequat&magna=nulla&bibendum=nisl&imperdiet=nunc&nullam=nisl&orci=duis&pede=bibendum&venenatis=felis&non=sed&sodales=interdum&sed=venenatis&tincidunt=turpis&eu=enim&felis=blandit&fusce=mi&posuere=in&felis=porttitor&sed=pede&lacus=justo&morbi=eu&sem=massa&mauris=donec&laoreet=dapibus&ut=duis&rhoncus=at&aliquet=velit",
-    "thumbnailImage": "./images/4.jpg",
-    "productName": "1E02",
-    "productPrice": 11862,
-    "productInformation": "사회과학원 어학연구소"
+
+    "thumbnailImageUrl": "./images/4.jpg",
+    "name": "1E02",
+    "price": 11862,
+    "description": "사회과학원 어학연구소"
   },
   {
     "id": 5,
-    "thumbnailLink": "http://toplist.cz/quis/odio/consequat/varius/integer/ac.jsp?sociis=fermentum&natoque=justo&penatibus=nec&et=condimentum&magnis=neque&dis=sapien&parturient=placerat&montes=ante&nascetur=nulla&ridiculus=justo&mus=aliquam&vivamus=quis&vestibulum=turpis&sagittis=eget&sapien=elit&cum=sodales&sociis=scelerisque&natoque=mauris&penatibus=sit&et=amet&magnis=eros&dis=suspendisse&parturient=accumsan&montes=tortor&nascetur=quis&ridiculus=turpis&mus=sed&etiam=ante&vel=vivamus&augue=tortor&vestibulum=duis&rutrum=mattis&rutrum=egestas&neque=metus&aenean=aenean&auctor=fermentum&gravida=donec&sem=ut&praesent=mauris&id=eget&massa=massa&id=tempor&nisl=convallis&venenatis=nulla&lacinia=neque&aenean=libero&sit=convallis&amet=eget&justo=eleifend&morbi=luctus&ut=ultricies&odio=eu&cras=nibh&mi=quisque&pede=id&malesuada=justo&in=sit&imperdiet=amet&et=sapien&commodo=dignissim&vulputate=vestibulum&justo=vestibulum&in=ante&blandit=ipsum&ultrices=primis&enim=in&lorem=faucibus&ipsum=orci&dolor=luctus&sit=et&amet=ultrices&consectetuer=posuere&adipiscing=cubilia&elit=curae&proin=nulla&interdum=dapibus&mauris=dolor&non=vel&ligula=est&pellentesque=donec&ultrices=odio&phasellus=justo&id=sollicitudin&sapien=ut",
-    "thumbnailImage": "./images/1.jpg",
-    "productName": "../../../../../../../../../../../etc/passwd%00",
-    "productPrice": 16171,
-    "productInformation": "../../../../../../../../../../../etc/passwd%00"
+
+    "thumbnailImageUrl": "./images/1.jpg",
+    "name": "etcpasswd%00",
+    "price": 16171,
+    "description": "etczcxpasswd%00"
   },
   {
     "id": 6,
-    "thumbnailLink": "http://free.fr/nibh.jsp?cum=eleifend&sociis=luctus&natoque=ultricies&penatibus=eu&et=nibh&magnis=quisque&dis=id&parturient=justo&montes=sit&nascetur=amet&ridiculus=sapien&mus=dignissim&vivamus=vestibulum&vestibulum=vestibulum&sagittis=ante&sapien=ipsum&cum=primis&sociis=in&natoque=faucibus&penatibus=orci&et=luctus&magnis=et&dis=ultrices&parturient=posuere&montes=cubilia&nascetur=curae&ridiculus=nulla&mus=dapibus&etiam=dolor&vel=vel&augue=est&vestibulum=donec&rutrum=odio&rutrum=justo&neque=sollicitudin&aenean=ut&auctor=suscipit&gravida=a&sem=feugiat&praesent=et&id=eros&massa=vestibulum&id=ac&nisl=est&venenatis=lacinia&lacinia=nisi&aenean=venenatis&sit=tristique&amet=fusce&justo=congue&morbi=diam&ut=id&odio=ornare&cras=imperdiet&mi=sapien&pede=urna&malesuada=pretium&in=nisl&imperdiet=ut&et=volutpat&commodo=sapien&vulputate=arcu&justo=sed&in=augue&blandit=aliquam&ultrices=erat&enim=volutpat&lorem=in&ipsum=congue&dolor=etiam&sit=justo&amet=etiam&consectetuer=pretium&adipiscing=iaculis&elit=justo&proin=in&interdum=hac&mauris=habitasse&non=platea&ligula=dictumst&pellentesque=etiam&ultrices=faucibus",
-    "thumbnailImage": "./images/1.jpg",
-    "productName": "(╯°□°）╯︵ ┻━┻)  ",
-    "productPrice": 17667,
-    "productInformation": "\"\""
+
+    "thumbnailImageUrl": "./images/1.jpg",
+    "name": "(╯°□°）╯︵ ┻━┻)  ",
+    "price": 17667,
+    "description": "\"\""
   }
 ]

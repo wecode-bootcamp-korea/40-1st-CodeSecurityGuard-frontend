@@ -5,11 +5,22 @@ import ProductCard from './Product/ProductCard';
 function ProductList() {
   const [product, setProduct] = useState([]);
 
+  // useEffect(() => {
+  //   fetch('http://10.58.52.118:8000/products/')
+  //     .then(response => response.json())
+  //     .then(result => setProduct(result.data));
+  // }, []);
+
   useEffect(() => {
-    fetch('/data/MOCK_DATA.json', { method: 'GET' })
+    fetch('./data/MOCK_DATA.json')
       .then(result => result.json())
       .then(data => setProduct(data));
   }, []);
+
+  // const [highPriceProduct, setHighPriceProduct] = useState();
+  // function handleChange(event) {
+  //   setHighPriceProduct(event.target.value);
+  // }
 
   return (
     <div className="container">
@@ -20,25 +31,24 @@ function ProductList() {
             <h1 className="listTitleText">면도/제모용품</h1>
             <div className="productListBox">
               <div className="productListMenu">
-                총 9개
-                <select className="sorting" onchange="myFunction()">
+                {/* 총 9개
+                <select className="sorting" onchange="handleChange">
                   <option value="newProduct">신상품</option>
                   <option value="highPriceProduct">높은가격</option>
                   <option value="lowPriceProduct">낮은가격</option>
                   <option value="bestProduct">인기상품</option>
-                </select>
+                </select> */}
               </div>
               <div className="productList">
                 <ul>
                   {product.map(products => {
                     return (
-                      <li id={products.id}>
+                      <li key={products.id}>
                         <ProductCard
-                          thumbnailLink={products.thumbnailLink}
-                          thumbnailImage={products.thumbnailImage}
-                          productName={products.productName}
-                          productPrice={products.productPrice}
-                          productInformation={products.productInformation}
+                          thumbnailImageUrl={products.thumbnailImageUrl}
+                          name={products.name}
+                          price={products.price}
+                          description={products.description}
                         />
                       </li>
                     );
