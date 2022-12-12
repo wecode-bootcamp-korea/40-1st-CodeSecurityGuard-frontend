@@ -16,22 +16,18 @@ const SignUp = () => {
 
   const handleForm = e => {
     const { name, value } = e.target;
-    setFormValue({
-      ...formValue,
-      [name]: value,
-    });
+    setFormValue({ ...formValue, [name]: value });
   };
-  console.log(formValue);
 
   const emailRegExp =
     /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
   const passwordRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,12}$/;
 
-  const isValidate =
+  const isAllValid =
     formValue.password === formValue.passwordCheck &&
     formValue.userName.length >= 2 &&
-    formValue.phoneNumberCenter.length == 4 &&
-    formValue.phoneNumberLast.length == 4;
+    formValue.phoneNumberCenter.length === 4 &&
+    formValue.phoneNumberLast.length === 4;
 
   const onSignUp = e => {
     e.preventDefault();
@@ -42,8 +38,11 @@ const SignUp = () => {
         email: formValue.email,
         password: formValue.password,
         name: formValue.userName,
-        phoneNumber:
-          '010' + formValue.phoneNumberCenter + formValue.phoneNumberLast,
+        phoneNumber: [
+          '010',
+          formValue.phoneNumberCenter,
+          formValue.phoneNumberLast,
+        ].join(''),
       }),
     })
       .then(response => response.json())
@@ -135,7 +134,7 @@ const SignUp = () => {
           disabled={
             !emailRegExp.test(formValue.email) &&
             !passwordRegExp.test(formValue.password) &&
-            !isValidate
+            !isAllValid
           }
           onClick={onSignUp}
         >
