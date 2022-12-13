@@ -10,7 +10,10 @@ const SignUp = () => {
     password: '',
     checkPassword: '',
     userName: '',
+<<<<<<< HEAD
+=======
     address: '',
+>>>>>>> master
     phoneNumberCenter: '',
     phoneNumberLast: '',
   });
@@ -27,7 +30,10 @@ const SignUp = () => {
   const isAllValid =
     formValue.password === formValue.passwordCheck &&
     formValue.userName.length >= 2 &&
+<<<<<<< HEAD
+=======
     formValue.address.length === 5 &&
+>>>>>>> master
     formValue.phoneNumberCenter.length === 4 &&
     formValue.phoneNumberLast.length === 4;
 
@@ -40,7 +46,10 @@ const SignUp = () => {
         email: formValue.email,
         password: formValue.password,
         name: formValue.userName,
+<<<<<<< HEAD
+=======
         address: formValue.address,
+>>>>>>> master
         phoneNumber: [
           '010',
           formValue.phoneNumberCenter,
