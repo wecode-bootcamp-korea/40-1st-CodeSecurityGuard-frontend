@@ -2,50 +2,57 @@
 
 $primary-color: #00388d;
 
-.navBox {
-  @include columnFlex;
-  max-width: 1050px;
-  height: auto;
-  margin: 14px auto 0;
+.nav {
   background-color: white;
+  border-bottom: 1px solid lightgray;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 20;
 
-  .headerElement {
-    .headerLink {
-      @include flex(flex-end, center);
-      font-size: 14px;
-      gap: 26px;
+  .navBox {
+    @include columnFlex;
+    overflow: hidden;
+    max-width: 1050px;
+    margin: 14px auto 0;
+    height: auto;
 
-      .signUpLink {
-        a {
-          color: $primary-color;
+    .headerElement {
+      .headerLink {
+        @include flex(flex-end, center);
+        font-size: 14px;
+        gap: 26px;
+
+        .signUpLink {
+          a {
+            color: $primary-color;
+          }
+        }
+
+        .loginLink {
+          a {
+            color: lightgray;
+          }
         }
       }
 
-      .loginLink {
-        a {
-          color: lightgray;
-        }
-      }
-    }
-
-    .searchBarForm {
-      @include flex(space-between, center);
-      margin: 20px 0;
+      .searchBarForm {
+        @include flex(space-between, center);
+        margin: 20px 0;
 
       .weselyLogo {
         a {
-          color: $primary-color;
           font-size: 50px;
+          color: $primary-color;
         }
-      }
 
-      .headerSearchBox {
-        @include flex(space-between, center);
-        width: 440px;
-        height: 52px;
-        padding: 0 10px 0 22px;
-        border: 1px solid $primary-color;
-        border-radius: 5px;
+        .headerSearchBox {
+          @include flex(space-between, center);
+          width: 440px;
+          height: 52px;
+          padding: 0 10px 0 22px;
+          border: 1px solid $primary-color;
+          border-radius: 5px;
 
         .searchInput {
           width: 300px;
@@ -53,73 +60,77 @@ $primary-color: #00388d;
           border-style: none;
 
           .submitButton {
-            border-style: none;
             background-color: white;
+            border-style: none;
+          }
+
+          img {
+            width: 28px;
+            height: 28px;
+            color: $primary-color;
           }
         }
 
-        img {
-          width: 28px;
-          height: 28px;
-          color: $primary-color;
-        }
-      }
+        .cartButtonWrapper {
+          display: flex;
+          justify-content: end;
+          width: 150px;
 
-      .cartButtonWrapper {
-        display: flex;
-        justify-content: end;
-        width: 150px;
-
-        img {
-          width: 30px;
-          height: 30px;
+          img {
+            width: 30px;
+            height: 30px;
+          }
         }
       }
     }
   }
   .navWrapper {
     @include flex(space-between, center);
-    width: 1050px;
     height: 60px;
+    width: 1050px;
 
     .navLeft {
-      display: flex;
-      position: relative;
-      align-items: center;
       width: 150px;
       height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
       font-size: 18px;
       font-weight: 700;
       cursor: pointer;
-      gap: 16px;
 
-      img {
-        width: 40px;
-        height: 40px;
+        .navCategory {
+          transition: all 0.2s ease-in-out;
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
       }
-    }
 
     .tabMenuWrapper {
       .tabMenu {
+        height: 100%;
         display: flex;
         align-items: center;
-        height: 100%;
         gap: 80px;
         a {
-          color: black;
           font-size: 18px;
           font-weight: 700;
+          color: black;
           &::selection {
-            border-bottom: 2px solid $primary-color;
             color: $primary-color;
+            border-bottom: 2px solid $primary-color;
           }
         }
       }
-    }
 
-    .rightMenuWrapper {
-      width: 150px;
-      height: 60px;
+      .rightMenuWrapper {
+        width: 150px;
+        height: 60px;
+      }
     }
   }
 }
