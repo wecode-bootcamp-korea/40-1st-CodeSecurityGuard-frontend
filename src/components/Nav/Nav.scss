@@ -1,0 +1,136 @@
+@import '../../styles/mixins/flex';
+
+$primary-color: #00388d;
+
+.nav {
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  .navBox {
+    @include columnFlex;
+    overflow: hidden;
+    max-width: 1050px;
+    margin: 14px auto 0;
+    height: auto;
+
+    .headerElement {
+      .headerLink {
+        @include flex(flex-end, center);
+        font-size: 14px;
+        gap: 26px;
+
+        .signUpLink {
+          a {
+            color: $primary-color;
+          }
+        }
+
+        .loginLink {
+          a {
+            color: lightgray;
+          }
+        }
+      }
+
+      .searchBarForm {
+        @include flex(space-between, center);
+        margin: 20px 0;
+
+      .weselyLogo {
+        a {
+          font-size: 50px;
+          color: $primary-color;
+        }
+
+        .headerSearchBox {
+          @include flex(space-between, center);
+          width: 440px;
+          height: 52px;
+          padding: 0 10px 0 22px;
+          border: 1px solid $primary-color;
+          border-radius: 5px;
+
+        .searchInput {
+          width: 300px;
+          height: 30px;
+          border-style: none;
+
+          .submitButton {
+            background-color: white;
+            border-style: none;
+          }
+
+          img {
+            width: 28px;
+            height: 28px;
+            color: $primary-color;
+          }
+        }
+
+        .cartButtonWrapper {
+          display: flex;
+          justify-content: end;
+          width: 150px;
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+  .navWrapper {
+    @include flex(space-between, center);
+    height: 60px;
+    width: 1050px;
+
+    .navLeft {
+      width: 150px;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+
+        .navCategory {
+          transition: all 0.2s ease-in-out;
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+    .tabMenuWrapper {
+      .tabMenu {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        a {
+          font-size: 18px;
+          font-weight: 700;
+          color: black;
+          &::selection {
+            color: $primary-color;
+            border-bottom: 2px solid $primary-color;
+          }
+        }
+      }
+
+      .rightMenuWrapper {
+        width: 150px;
+        height: 60px;
+      }
+    }
+  }
+}

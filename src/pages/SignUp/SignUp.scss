@@ -1,0 +1,154 @@
+@mixin flex($align-items: center, $justify-content: space-between) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin font($font-size, $text-align) {
+  font-size: $font-size;
+  text-align: $text-align;
+}
+
+@mixin formBoxStyle {
+  margin: 30px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+@mixin titleStyle {
+  margin-left: 0px;
+  width: 170px;
+}
+
+@mixin inputStyle {
+  padding: 11px 13px;
+  border: 1px solid #dddddd;
+  border-radius: 7px;
+}
+
+@mixin inputSize {
+  width: 380px;
+  height: 60px;
+}
+
+.signUpWrap {
+  width: 665px;
+  margin: 30px;
+
+  ::placeholder {
+    color: #dddddd;
+  }
+
+  .signUpTop {
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+
+    h2.signUpTitle {
+      @include font(38px, center);
+      padding: 52px 52px 97px 52px;
+      font-weight: bolder;
+    }
+
+    h3.signUpSubtitle {
+      @include font(29px, left);
+    }
+
+    p.signUpRequired {
+      @include font(13px, right);
+    }
+  }
+
+  .userInfo {
+    .form {
+      @include formBoxStyle;
+    }
+
+    .formTitle {
+      @include titleStyle;
+    }
+
+    input {
+      @include inputSize;
+      @include inputStyle;
+    }
+  }
+
+  .checkUserForm {
+    justify-content: space-between;
+    display: grid;
+    position: absolute;
+    p {
+      left: 100px;
+      top: 100px;
+    }
+  }
+}
+
+.agreeWrap {
+  @include formBoxStyle;
+
+  .agreeTitle {
+    margin-left: 0px;
+    width: 170px;
+  }
+  input[type='checkbox'] {
+    background: url('../../../public/images/check.png') no-repeat center;
+    background-size: 25px 25px;
+    cursor: pointer;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid #999;
+    transition: background 0.2s;
+    margin-right: 20px;
+  }
+  input[type='checkbox']:checked {
+    background: url('../../../public/images/checked.png') no-repeat center;
+    background-size: 20px 20px;
+  }
+  label {
+    font-size: 22px;
+  }
+}
+
+.PhoneNumberWrap {
+  @include formBoxStyle;
+
+  .phoneNumberInfo {
+    @include flex(center, space-between);
+    @include inputSize;
+  }
+
+  .phoneNumberTitle {
+    @include titleStyle;
+  }
+
+  select,
+  .phoneNumberCenter,
+  .phoneNumberLast {
+    @include inputStyle;
+    width: 100px;
+    height: 60px;
+  }
+}
+
+.submitWrap {
+  @include flex(center, center);
+
+  .submitButton {
+    width: 280px;
+    height: 65px;
+    margin: 5px;
+    border: none;
+    border-radius: 7px;
+    background-color: #09388c;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    &.disabled {
+      background-color: black;
+    }
+  }
+}

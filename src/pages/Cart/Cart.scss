@@ -1,0 +1,105 @@
+@import '../../styles/mixins/flex.scss';
+@mixin amountStyle {
+  font-size: 21px;
+  @include flex(space-between, center);
+}
+
+.Wrap {
+  width: 70%;
+}
+.cartTitleWrap {
+  width: 100%;
+  text-align: center;
+  padding: 52px 0 72px;
+  box-sizing: border-box;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 140%;
+}
+.orderSelect {
+  @include flex(flex-start, center);
+  font-size: 18px;
+  width: 660px;
+  padding-bottom: 10px;
+
+  .countCheck {
+    @include flex(center, center);
+  }
+}
+
+input[type='checkbox'] {
+  cursor: pointer;
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid #999;
+  transition: background 0.2s;
+}
+
+.checkOneList {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 3px solid #d9d9d9;
+  color: black;
+}
+
+.orderWrap {
+  @include flex(center, center);
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: row;
+  align-items: flex-start;
+
+  .orderListWrap {
+    width: 70%;
+    height: 660px;
+    border-top: 1px solid black;
+    margin-right: 30px;
+  }
+
+  .orderAside {
+    width: 50%;
+    max-width: 330px;
+    display: grid;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  button {
+    width: 314px;
+    height: 60px;
+    padding: 11px 13px !important;
+    margin-bottom: 16px !important;
+    background-color: #09388c;
+    border: 0px solid #09388c;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+
+    cursor: pointer;
+  }
+
+  .orderReceipt {
+    background: #fbfafa;
+    padding: 30px 22px 49px;
+    box-sizing: border-box;
+  }
+
+  .ReceiptTop {
+    @include amountStyle;
+    margin-bottom: 30px;
+  }
+
+  .ReceiptBottom {
+    font-weight: bolder;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #d9d9d9;
+    @include amountStyle;
+    .totalAmount {
+      display: flex;
+    }
+  }
+}
