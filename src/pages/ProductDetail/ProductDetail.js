@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import Modal from '../../components/Modal/Modal';
 import MenuTab from './MenuTab';
 import './ProductDetail.scss';
 
@@ -7,9 +8,18 @@ const ProductDetail = () => {
   const navigate = useNavigate();
   const [quantityValue, setQuantityValue] = useState(1);
   const [products, setProducts] = useState({});
+  const [ModalOpened, setModalOpened] = useState(false);
   const params = useParams();
   const productId = params.id;
   const accessToken = localStorage.getItem('token');
+
+  const handleOpenModal = () => {
+    setModalOpened(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpened(false);
+  };
 
   const moveToLogin = () => {
     navigate('/login');
@@ -28,20 +38,39 @@ const ProductDetail = () => {
   };
 
   useEffect(() => {
-    fetch(`/data/MOCK_DATA.json`)
+    fetch(`http://10.58.52.188:8000/products/${productId}`)
       .then(response => response.json())
-      .then(result => setProducts(result[productId]));
+      .then(result => setProducts(result.data[0]));
   }, [productId]);
-
   const onCart = () => {
     if (!accessToken) {
       alert('로그인 페이지로 이동합니다');
       moveToLogin();
     }
+
+    fetch('http://10.58.52.188:8000/carts/createcart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        authorization: accessToken,
+      },
+      body: JSON.stringify({
+        productId: id,
+        quantity: quantityValue,
+      }),
+    }).then(res => res.json());
+    handleOpenModal();
   };
 
-  const { id, name, thumbnailImageUrl, description, price, ...others } =
-    products;
+  const {
+    id,
+    brandName,
+    name,
+    thumbnailImageUrl,
+    description,
+    price,
+    ...others
+  } = products;
 
   return (
     <>
@@ -52,12 +81,12 @@ const ProductDetail = () => {
               <img alt="productImage" src={thumbnailImageUrl} />
             </div>
             <div className="productDetailInfoArea">
-              <h3 className="productDetailBrandName">{name}</h3>
+              <h3 className="productDetailBrandName">{brandName}</h3>
               <h1 className="productDetailProductName">{name}</h1>
               <span className="productDetailDescription">{description}</span>
               <div className="productDetailPriceReviewBox">
                 <div className="productDetailPrice">
-                  {[price].toLocaleString()}원
+                  {[Math.floor(price)].toLocaleString()}원
                 </div>
               </div>
               <div className="productDetailQuantityBox">
@@ -79,19 +108,22 @@ const ProductDetail = () => {
               <div className="productDetailTotalPriceBox">
                 <span>총 상품금액:</span>
                 <p className="productDetailTotalPrice">
-                  {[price * quantityValue].toLocaleString()}원
+                  {[Math.floor(price) * quantityValue].toLocaleString()}원
                 </p>
               </div>
               <div className="productDetailBtnBox">
                 <button className="productDetailCartButton" onClick={onCart}>
                   장바구니
                 </button>
-                <button className="productDetailOrderButton">구매하기</button>
+                <button className="productDetailOrderButton" onClick={onCart}>
+                  구매하기
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div>{ModalOpened && <Modal handleCloseModal={handleCloseModal} />}</div>
       <div className="productDetailTab">
         <MenuTab />
       </div>
