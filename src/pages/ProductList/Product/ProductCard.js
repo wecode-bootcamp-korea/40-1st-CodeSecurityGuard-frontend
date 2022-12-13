@@ -3,20 +3,20 @@ import { Link } from 'react-router-dom';
 import './ProductCard.scss';
 
 function ProductCard(props) {
-  const { thumbnailImageUrl, name, price, discountedPrice, description } =
+  const { id, thumbnailImageUrl, name, price, discountedPrice, description } =
     props;
 
   return (
     <div className="productCardList">
       <div className="thumbnail">
-        <Link to="productdetail/">
+        <Link to={`/productdetail/${id}`}>
           <img className="thumbnailImage" src={thumbnailImageUrl} alt={name} />
         </Link>
 
         <Link to="#">
           <img
             className="cartImage"
-            src="./images/carticonimage.jpg"
+            src="/images/carticonimage.jpg"
             alt="카트아이콘"
           />
         </Link>

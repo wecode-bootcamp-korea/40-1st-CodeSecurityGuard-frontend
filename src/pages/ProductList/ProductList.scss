@@ -16,7 +16,25 @@
       text-align: center;
     }
   }
+  .subCategoryBox {
+    padding: 40px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: rgb(205, 199, 199);
+    ul {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      margin: 0 auto;
 
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    li {
+      list-style: none;
+    }
+  }
   .productListMenu {
     margin-top: 30px;
     margin-bottom: 60px;
