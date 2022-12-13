@@ -1,0 +1,50 @@
+.mainProductCardList {
+  a {
+    text-decoration-line: none;
+  }
+
+  .thumbnail {
+    position: relative;
+    width: fit-content;
+    height: 330px;
+    margin-top: 30px;
+    margin-right: 15px;
+
+    .thumbnailImage {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .cartImage {
+      position: absolute;
+      right: 8%;
+      bottom: 100px;
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+      border-radius: 70%;
+    }
+  }
+
+  .description {
+    margin-bottom: 30px;
+
+    .productName {
+      margin: 10px;
+      padding-top: 5px;
+      font-size: large;
+    }
+
+    .productPrice {
+      margin-bottom: 30px;
+      margin-left: 10px;
+      font-size: large;
+      font-weight: bold;
+    }
+
+    .productInformation {
+      margin-left: 10px;
+    }
+  }
+}
