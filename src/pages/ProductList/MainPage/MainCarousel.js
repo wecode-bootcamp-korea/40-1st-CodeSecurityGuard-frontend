@@ -60,22 +60,22 @@ export default MainCarousel;
 const BANNERS = [
   {
     id: 1,
-    url: 'https://images.unsplash.com/photo-1669745355187-a926c7a721ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
+    url: '/images/MCimage1.png',
     link: '#',
   },
   {
     id: 2,
-    url: 'https://images.unsplash.com/photo-1670031652349-1b65e8af026c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1856&q=80',
+    url: '/images/MCimage2.png',
     link: '#',
   },
   {
     id: 3,
-    url: 'https://images.unsplash.com/photo-1669908366209-0edf94c4f6f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80',
+    url: '/images/MCimage3.png',
     link: '#',
   },
   {
     id: 4,
-    url: 'https://images.unsplash.com/photo-1669967284114-fe0419656123?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80',
+    url: '/images/MCimage4.png',
     link: '#',
   },
 ];

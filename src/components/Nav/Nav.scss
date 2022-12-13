@@ -1,4 +1,4 @@
-@import '../../styles/mixins/flex.scss';
+@import '../../styles/mixins/flex';
 
 $primary-color: #00388d;
 
@@ -40,12 +40,10 @@ $primary-color: #00388d;
         @include flex(space-between, center);
         margin: 20px 0;
 
-        .weselyLogo {
-          img {
-            margin-top: 20px;
-            width: 200px;
-            height: 85px;
-          }
+      .weselyLogo {
+        a {
+          font-size: 50px;
+          color: $primary-color;
         }
 
         .headerSearchBox {
@@ -56,19 +54,14 @@ $primary-color: #00388d;
           border: 1px solid $primary-color;
           border-radius: 5px;
 
-          .searchInput {
-            width: 300px;
-            height: 30px;
+        .searchInput {
+          width: 300px;
+          height: 30px;
+          border-style: none;
+
+          .submitButton {
+            background-color: white;
             border-style: none;
-
-            &:focus {
-              outline: none;
-            }
-
-            .submitButton {
-              background-color: white;
-              border-style: none;
-            }
           }
 
           img {
@@ -90,22 +83,22 @@ $primary-color: #00388d;
         }
       }
     }
-    .navWrapper {
-      @include flex(space-between, center);
-      height: 60px;
-      width: 1050px;
+  }
+  .navWrapper {
+    @include flex(space-between, center);
+    height: 60px;
+    width: 1050px;
 
-      .navLeft {
-        width: 150px;
-        height: 100%;
-        margin-bottom: 20px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        font-size: 18px;
-        font-weight: 700;
-        cursor: pointer;
+    .navLeft {
+      width: 150px;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
 
         .navCategory {
           transition: all 0.2s ease-in-out;
@@ -117,16 +110,19 @@ $primary-color: #00388d;
         }
       }
 
-      .tabMenuWrapper {
-        .tabMenu {
-          height: 100%;
-          display: flex;
-          align-items: center;
-          gap: 80px;
-          a {
-            font-size: 18px;
-            font-weight: 700;
-            color: black;
+    .tabMenuWrapper {
+      .tabMenu {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        a {
+          font-size: 18px;
+          font-weight: 700;
+          color: black;
+          &::selection {
+            color: $primary-color;
+            border-bottom: 2px solid $primary-color;
           }
         }
       }

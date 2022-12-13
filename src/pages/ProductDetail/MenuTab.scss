@@ -1,0 +1,82 @@
+@import '/src/styles/variables';
+
+.productDetailMenuTab {
+  width: 1018px;
+  margin: auto;
+}
+
+.productDetailTabs {
+  display: flex;
+
+  .productDetailTapList {
+    flex: 1;
+    height: 60px;
+    border: 1px solid #dddddd;
+    background-color: #fafafa;
+    color: #666666;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .productDetailTapList.selected {
+    border-bottom: none;
+    background-color: #ffffff;
+    color: #00388c;
+  }
+}
+
+.productDetailContent {
+  margin: 50px 0;
+  img {
+    width: 1018px;
+    object-fit: cover;
+    margin-top: 30px;
+  }
+}
+
+.productInfoTab {
+  margin: 0 auto;
+}
+
+.productDeliveryInfo,
+.productExchangeInfo {
+  padding: 50px 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.deliveryInfoTitle,
+.exchangeInfoTitle {
+  padding: 30px 0;
+  color: #333333;
+}
+.deliveryInfoList,
+.exchangeInfoList {
+  li {
+    color: #999999;
+    line-height: 1.5;
+  }
+}
+.productDetailTabBox {
+  margin: 200px 0;
+  color: #707680;
+  text-align: center;
+}
+
+.productReviewTab {
+  a {
+    font-size: 16px;
+  }
+  @include flex(space-between, center);
+  padding: 16px 0;
+  border-bottom: 2px solid black;
+  font-size: 20px;
+}
+.productReviewListBox {
+  margin: 100px 0;
+  color: #707680;
+  line-height: 25px;
+  text-align: center;
+}
