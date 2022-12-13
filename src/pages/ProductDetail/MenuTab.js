@@ -1,22 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react';
 import './MenuTab.scss';
 
 const ProductInfoTab = () => {
-  const [products, setProducts] = useState({});
-
-  const params = useParams();
-  const productId = params.id;
-
-  useEffect(() => {
-    fetch(`/data/MOCK_DATA.json`)
-      .then(response => response.json())
-      .then(result => setProducts(result[productId]));
-  }, [productId]);
-
   return (
     <div className="productInfoTab">
-      <img alt="상품설명" src={products.thumbnailImageUrl} />
+      <img alt="상품설명" src="/images/productInfo.png" />
       <div className="productDeliveryInfo">
         <div className="deliveryInfoTitle"> 배송정보</div>
         <div className="deliveryInfoList">
@@ -79,7 +67,7 @@ const ReviewTab = () => {
     <>
       <div className="productReviewTab">
         <div>후기 (0)</div>
-        <a href="#">전체 상품 리뷰 보기</a>
+        <div>전체 상품 리뷰 보기</div>
       </div>
       <div className="productReviewListBox">
         <div>리뷰가 없습니다.</div>
@@ -104,11 +92,9 @@ const MenuTab = id => {
         {TAB_ARR.map((tab, index) => (
           <li
             key={index}
-            className={
-              tab === currentTab
-                ? 'productDetailTapSelected'
-                : 'productDetailTapList'
-            }
+            className={`productDetailTapList ${
+              tab === currentTab && 'selected'
+            }`}
             onClick={() => setCurrentTab(tab)}
           >
             {tab}

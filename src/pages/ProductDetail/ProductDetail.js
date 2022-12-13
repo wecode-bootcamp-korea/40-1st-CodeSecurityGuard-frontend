@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import MenuTab from './MenuTab';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
+  const navigate = useNavigate();
   const [quantityValue, setQuantityValue] = useState(1);
   const [products, setProducts] = useState({});
-
   const params = useParams();
   const productId = params.id;
+  const accessToken = localStorage.getItem('token');
+
+  const moveToLogin = () => {
+    navigate('/login');
+  };
 
   const upQuantity = () => {
     setQuantityValue(prev => prev + 1);
@@ -28,8 +33,14 @@ const ProductDetail = () => {
       .then(result => setProducts(result[productId]));
   }, [productId]);
 
-  console.log(products);
-  const { brandId, name, thumbnailImageUrl, description, price, ...others } =
+  const onCart = () => {
+    if (!accessToken) {
+      alert('로그인 페이지로 이동합니다');
+      moveToLogin();
+    }
+  };
+
+  const { id, name, thumbnailImageUrl, description, price, ...others } =
     products;
 
   return (
@@ -40,8 +51,8 @@ const ProductDetail = () => {
             <div className="productDetailImageArea">
               <img alt="productImage" src={thumbnailImageUrl} />
             </div>
-            <div className="ProductDetailInfoArea">
-              <h3 className="productDetailBrandName">{brandId}</h3>
+            <div className="productDetailInfoArea">
+              <h3 className="productDetailBrandName">{name}</h3>
               <h1 className="productDetailProductName">{name}</h1>
               <span className="productDetailDescription">{description}</span>
               <div className="productDetailPriceReviewBox">
@@ -72,7 +83,9 @@ const ProductDetail = () => {
                 </p>
               </div>
               <div className="productDetailBtnBox">
-                <button className="productDetailCartButton">장바구니</button>
+                <button className="productDetailCartButton" onClick={onCart}>
+                  장바구니
+                </button>
                 <button className="productDetailOrderButton">구매하기</button>
               </div>
             </div>

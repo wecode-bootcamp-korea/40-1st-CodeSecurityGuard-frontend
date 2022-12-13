@@ -5,7 +5,6 @@ import Login from './pages/Login/Login';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import ProductCard from './pages/ProductList/Product/ProductCard';
 import ProductList from './pages/ProductList/ProductList';
-import List from './pages/ProductDetail/ProductPage';
 import Nav from './components/Nav/Nav';
 import MainPage from './pages/ProductList/MainPage/MainPage';
 
@@ -15,7 +14,6 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/pp" element={<List />} />
         <Route path="/productdetail/:id" element={<ProductDetail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/productcard" element={<ProductCard />} />
