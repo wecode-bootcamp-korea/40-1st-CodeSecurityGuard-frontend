@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+
+    "thumbnailImageUrl": "/images/1.jpg",
+    "name": "1E+02",
+    "price": 9750,
+    "description": "בְּרֵאשִׁית, בָּרָא אֱלֹהִים, אֵת הַשָּׁמַיִם, וְאֵת הָאָרֶץ"
+  },
+  {
+    "id": 2,
+
+    "thumbnailImageUrl": "/images/2.jpg",
+    "name": "　",
+    "price": 17928,
+    "description": "𠜎𠜱𠝹𠱓𠱸𠲖𠳏"
+  },
+  {
+    "id": 3,
+
+    "thumbnailImageUrl": "/images/3.jpg",
+    "productName": "NULL",
+    "price": 12092,
+    "description": "␣"
+  }
+]

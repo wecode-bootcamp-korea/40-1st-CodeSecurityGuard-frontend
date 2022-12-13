@@ -10,6 +10,7 @@ const SignUp = () => {
     password: '',
     checkPassword: '',
     userName: '',
+    address: '',
     phoneNumberCenter: '',
     phoneNumberLast: '',
   });
@@ -26,6 +27,7 @@ const SignUp = () => {
   const isAllValid =
     formValue.password === formValue.passwordCheck &&
     formValue.userName.length >= 2 &&
+    formValue.address.length === 5 &&
     formValue.phoneNumberCenter.length === 4 &&
     formValue.phoneNumberLast.length === 4;
 
@@ -38,6 +40,7 @@ const SignUp = () => {
         email: formValue.email,
         password: formValue.password,
         name: formValue.userName,
+        address: formValue.address,
         phoneNumber: [
           '010',
           formValue.phoneNumberCenter,
@@ -171,5 +174,11 @@ const USER_FORM = [
     name: 'userName',
     formTitle: '이름',
     placeholder: '실명으로 기입해주세요',
+  },
+  {
+    id: 5,
+    name: 'address',
+    formTitle: '주소',
+    placeholder: '시 / 도 / 군・구 / 상세주소',
   },
 ];
