@@ -48,7 +48,7 @@ const ProductDetail = () => {
       moveToLogin();
     }
 
-    fetch('http://10.58.52.188:8000/carts/createcart', {
+    fetch('http://10.58.52.177:8000/carts/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -58,8 +58,12 @@ const ProductDetail = () => {
         productId: id,
         quantity: quantityValue,
       }),
-    }).then(res => res.json());
-    handleOpenModal();
+    })
+      .then(res => res.json())
+      .then(() => {
+        handleOpenModal();
+      })
+      .catch(error => console.log(error));
   };
 
   const {
