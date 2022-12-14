@@ -1,0 +1,49 @@
+.cartItemWrapper {
+  width: 680px;
+  height: 120px;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  grid: none;
+
+  .cartListWrapper {
+    display: flex;
+  }
+  .checkBoxWrapper {
+    img {
+      width: 13px;
+      height: 13px;
+    }
+  }
+  .cartItemInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    margin-left: 10px;
+
+    .qtyWrapper {
+      width: 250px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .qtyButtonWrapper {
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid gray;
+      border-radius: 3px;
+    }
+
+    Button {
+      border: 0;
+      outline: 0;
+      background-color: white;
+    }
+  }
+}
