@@ -2,7 +2,6 @@
   margin: 60px;
   margin-right: 5%;
   margin-left: 5%;
-
   .ad {
     width: 100%;
     height: auto;
@@ -41,8 +40,10 @@
   .sorting {
     float: right;
   }
+
   .productList {
     margin-bottom: 80px;
+    padding: 30px;
     ul {
       display: grid;
       grid-gap: 20px;

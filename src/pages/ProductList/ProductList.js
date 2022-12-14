@@ -2,29 +2,39 @@ import React, { useEffect, useState } from 'react';
 import './ProductList.scss';
 import ProductCard from './Product/ProductCard';
 import { useParams } from 'react-router-dom';
-import CategoryList from './Product/CategoryList';
+import SubCategoryList from './Product/SubCategoryList';
 
 function ProductList() {
   const [product, setProduct] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
-  const params = useParams();
-  const param = params.value;
-  const arr = ['2', '21', '22', '23', '24', '25'];
 
-  // useEffect(() => {
-  //   fetch('http://10.58.52.118:8000/products/${params.value}')
-  //     .then(response => response.json())
-  //     .then(result => setProduct(result.data));
-  // }, []);
+  const allArr = ['all1'];
+  const medicineArr = [
+    'category1',
+    'subCategory1',
+    'subCategory2',
+    'subCategory3',
+    'subCategory4',
+    'subCategory5',
+  ];
+  const shaverArr = ['category2'];
+
+  const params = useParams();
+  const paramv = params.value;
+  const parami = params.id;
 
   useEffect(() => {
-    fetch(`/data/MOCK_DATA${param}.json`)
-      .then(result => result.json())
-      .then(data => setProduct(data));
+    paramv.length < 5
+      ? fetch('http://10.58.52.191:8000/products')
+          .then(response => response.json())
+          .then(result => setProduct(result.data))
+      : fetch(`http://10.58.52.191:8000/products/${paramv}/${parami}`)
+          .then(response => response.json())
+          .then(result => setProduct(result.data));
   }, []);
 
   useEffect(() => {
-    fetch(`/data/CATE_MOCK_DATA${param}.json`)
+    fetch(`/data/${paramv}${parami}.json`)
       .then(result => result.json())
       .then(data => setSubCategory(data));
   }, []);
@@ -33,34 +43,33 @@ function ProductList() {
     <div className="container">
       <div className="contents">
         <div className="advertisement">
-          {param === '1' ? null : param === '3' ? (
-            <img src="/images/ad1.jpeg" alt="면도기용품배너" className="ad" />
-          ) : arr.includes(param) ? (
-            <img src="/images/ad2.jpeg" alt="영양제용품배너" className="ad" />
+          {allArr.includes(`${paramv}${parami}`) ? (
+            ''
+          ) : medicineArr.includes(`${paramv}${parami}`) ? (
+            <img className="ad" src="/images/ad1.jpeg" alt="영양제" />
+          ) : shaverArr.includes(`${paramv}${parami}`) ? (
+            <img className="ad" src="/images/ad2.jpeg" alt="면도/제모용품" />
           ) : (
-            <img src="/images/ad3.jpeg" alt="스킨케어용품배너" className="ad" />
+            <img className="ad" src="/images/ad3.jpeg" alt="스킨케어" />
           )}
         </div>
 
-        <div className="listTitle">
-          {/* {mainname} */}
-          {param === '1' ? (
-            <p>전체보기</p>
-          ) : param === '3' ? (
-            <p>면도기</p>
-          ) : arr.includes(param) ? (
-            <p>영양제</p>
-          ) : (
-            <p>스킨케어</p>
-          )}
-        </div>
+        {allArr.includes(`${paramv}${parami}`) ? (
+          <div className="listTitle">전체보기</div>
+        ) : medicineArr.includes(`${paramv}${parami}`) ? (
+          <div className="listTitle">영양제</div>
+        ) : shaverArr.includes(`${paramv}${parami}`) ? (
+          <div className="listTitle">면도/제모용품</div>
+        ) : (
+          <div className="listTitle">스킨케어</div>
+        )}
 
         {subCategory.length > 1 && (
           <div className="subCategoryBox">
             <ul>
               {subCategory.map(subCategories => {
                 return (
-                  <CategoryList
+                  <SubCategoryList
                     key={subCategories.id}
                     name={subCategories.name}
                     url={subCategories.url}

@@ -8,10 +8,11 @@
   .thumbnail {
     position: relative;
 
-    max-width: 400px;
-    height: auto;
-    max-height: 400px;
+    width: 270px;
+    height: 250px;
     overflow: hidden;
+    border-radius: 10px;
+    object-fit: contain;
 
     .thumbnailImage {
       width: 100%;

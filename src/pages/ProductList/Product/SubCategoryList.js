@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './CategoryList.scss';
+import { Link } from 'react-router-dom';
+import './SubCategoryList.scss';
 
 function CategoryList(props) {
   const { url, name } = props;
