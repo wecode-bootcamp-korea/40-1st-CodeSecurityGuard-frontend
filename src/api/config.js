@@ -14,5 +14,5 @@ export const api = {
   category: `${BASE_URL}/category/3`,
   //조회: 서브-카테고리 한가지의 모든 제품 정보
   subcategory: `${BASE_URL}/subCategory/3`,
-  detail: id => `${BASE_URL}/product/${id}`,
+  detail: id => `${BASE_URL}/products/${id}`,
 };
