@@ -11,7 +11,7 @@ const ProductDetail = () => {
   const [ModalOpened, setModalOpened] = useState(false);
   const params = useParams();
   const productId = params.id;
-  const accessToken = localStorage.getItem('token') ?? 'default-token';
+  const accessToken = localStorage.getItem('token') ?? '';
 
   const handleOpenModal = () => {
     setModalOpened(true);
@@ -42,8 +42,9 @@ const ProductDetail = () => {
       .then(response => response.json())
       .then(result => setProducts(result.data[0]));
   }, [productId]);
+
   const onCart = () => {
-    if (accessToken === 'default-token') {
+    if (!accessToken) {
       alert('로그인 페이지로 이동합니다');
       moveToLogin();
     }
@@ -63,7 +64,7 @@ const ProductDetail = () => {
       .then(() => {
         handleOpenModal();
       })
-      .catch(error => console.log(error));
+      .catch(error => console.error(error));
   };
 
   const {
