@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import './ProductList.scss';
 import ProductCard from './Product/ProductCard';
 import { useParams } from 'react-router-dom';

@@ -7,17 +7,19 @@ import SignUp from './pages/SignUp/SignUp';
 import ProductCard from './pages/ProductList/Product/ProductCard';
 import ProductList from './pages/ProductList/ProductList';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
-import Main from './pages/ProductList/MainPage/MainPage';
+import MainPage from './pages/MainPage/MainPage';
+
 const Router = () => {
   return (
     <BrowserRouter>
       <Nav />
       <Routes>
+        <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/productcard" element={<ProductCard />} />
         <Route path="/productdetail/:id" element={<ProductDetail />} />
-        <Route path="/main" element={<Main />} />
+        <Route path="/main" element={<MainPage />} />
         <Route path="/productlist/:value/:id" element={<ProductList />} />
       </Routes>
       <Footer />
