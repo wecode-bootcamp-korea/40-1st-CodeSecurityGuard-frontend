@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './CategoryList.scss';
 
 function CategoryList(props) {
   const { url, name } = props;
 
   return (
-    <div className="CategoryName">
-      <Link to={`/productlist/${url}`} onClick="window.location.reload()">
+    <div className="categoryName">
+      <Link to={`${url}`} onClick="window.location.reload()">
         {name}
       </Link>
     </div>

@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "전체보기",
+    "url": "/productlist/4"
+  },
+  {
+    "id": 2,
+    "name": "클렌징",
+    "url": "/productlist/41"
+  },
+  {
+    "id": 3,
+    "name": "토너",
+    "url": "/productlist/42"
+  },
+  {
+    "id": 4,
+    "name": "세럼",
+    "url": "/productlist/43"
+  },
+  {
+    "id": 5,
+    "name": "로션/크림",
+    "url": "/productlist/44"
+  },
+  {
+    "id": 6,
+    "name": "선크림",
+    "url": "/productlist/45"
+  },
+  {
+    "id": 7,
+    "name": "마스크팩",
+    "url": "/productlist/46"
+  }
+]

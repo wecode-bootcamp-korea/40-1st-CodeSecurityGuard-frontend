@@ -1,48 +1,42 @@
 [
   {
     "id": 1,
-
-    "thumbnailImageUrl": "/images/1.jpg",
+    "thumbnailImageUrl": "/images/1.jpeg",
     "name": "1E+02",
     "price": 9750,
     "description": "בְּרֵאשִׁית, בָּרָא אֱלֹהִים, אֵת הַשָּׁמַיִם, וְאֵת הָאָרֶץ"
   },
   {
     "id": 2,
-
-    "thumbnailImageUrl": "/images/2.jpg",
+    "thumbnailImageUrl": "/images/2.jpeg",
     "name": "　",
     "price": 17928,
     "description": "𠜎𠜱𠝹𠱓𠱸𠲖𠳏"
   },
   {
     "id": 3,
-
-    "thumbnailImageUrl": "/images/3.jpg",
+    "thumbnailImageUrl": "/images/3.jpeg",
     "productName": "NULL",
     "price": 12092,
     "description": "␣"
   },
   {
     "id": 4,
-
-    "thumbnailImageUrl": "/images/4.jpg",
+    "thumbnailImageUrl": "/images/4.jpeg",
     "name": "1E02",
     "price": 11862,
     "description": "사회과학원 어학연구소"
   },
   {
     "id": 5,
-
-    "thumbnailImageUrl": "/images/1.jpg",
+    "thumbnailImageUrl": "/images/5.jpeg",
     "name": "etcpasswd%00",
     "price": 16171,
     "description": "etczcxpasswd%00"
   },
   {
     "id": 6,
-
-    "thumbnailImageUrl": "/images/1.jpg",
+    "thumbnailImageUrl": "/images/1.jpeg",
     "name": "(╯°□°）╯︵ ┻━┻)  ",
     "price": 17667,
     "description": "\"\""
