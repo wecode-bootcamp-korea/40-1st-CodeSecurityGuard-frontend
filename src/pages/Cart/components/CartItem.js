@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './CartItem.scss';
 
 const CartItem = props => {
-  console.log(props);
   const {
     cartId: id,
     name,
