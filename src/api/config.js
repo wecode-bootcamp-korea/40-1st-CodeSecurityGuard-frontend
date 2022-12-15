@@ -9,10 +9,12 @@ export const api = {
   //조회: 모든 제품 정보
   list: `${BASE_URL}/products`,
   //조회: 제품 한개의 정보
-  product: `${BASE_URL}/products/1`,
+  product: `${BASE_URL}/products/`,
   //조회: 카테고리 한가지의 모든 제품 정보
   category: `${BASE_URL}/category/3`,
   //조회: 서브-카테고리 한가지의 모든 제품 정보
   subcategory: `${BASE_URL}/subCategory/3`,
   detail: id => `${BASE_URL}/products/${id}`,
+  cart: `${BASE_URL}/carts`,
+  order: `${BASE_URL}/orders`,
 };

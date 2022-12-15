@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Modal from '../../components/Modal/Modal';
+import { api } from '../../api/config';
 import './MainProductCard.scss';
 
 function MainProductCard(props) {
@@ -25,7 +26,7 @@ function MainProductCard(props) {
       moveToLogin();
     }
 
-    fetch('http://10.58.52.222:8000/carts/', {
+    fetch(api.cart, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

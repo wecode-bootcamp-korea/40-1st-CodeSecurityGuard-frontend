@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './Nav.scss';
 import CategoryList from '../CategoryList/CategoryList';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const accessToken = localStorage.getItem('token') ?? '';
+
   return (
     <nav className="nav">
       <div className="navBox">
@@ -32,7 +35,11 @@ const Nav = () => {
               </div>
               <div className="cartButtonWrapper">
                 <Link to="/carts">
-                  <img src="/images/shopping-cart.png" alt="장바구니" />
+                  <img
+                    // onClick={vaildLogin}
+                    src="/images/shopping-cart.png"
+                    alt="장바구니"
+                  />
                 </Link>
               </div>
             </form>

@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Modal from '../../components/Modal/Modal';
 import ScrollUpBtn from '../../components/ScrollUpTop/ScrollUpTop';
 import MenuTab from './MenuTab';
+import { api } from '../../api/config';
+import { BASE_URL } from '../../api/config';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
@@ -39,7 +41,7 @@ const ProductDetail = () => {
   };
 
   useEffect(() => {
-    fetch(`http://10.58.52.222:8000/products/${productId}`)
+    fetch(`${BASE_URL}/products/${productId}`)
       .then(response => response.json())
       .then(result => setProducts(result.data[0]));
   }, [productId]);
@@ -50,7 +52,7 @@ const ProductDetail = () => {
       moveToLogin();
     }
 
-    fetch('http://10.58.52.222:8000/carts/', {
+    fetch(api.cart, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

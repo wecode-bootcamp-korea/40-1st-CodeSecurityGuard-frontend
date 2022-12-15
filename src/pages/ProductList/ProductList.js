@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './ProductList.scss';
 import ProductCard from './Product/ProductCard';
 import { useParams } from 'react-router-dom';
-
 import SubCategoryList from './Product/SubCategoryList';
 import { BASE_URL } from '../../api/config';
 
@@ -13,14 +12,14 @@ function ProductList() {
 
   const allArr = ['all1'];
   const medicineArr = [
-    'category1',
-    'subCategory1',
-    'subCategory2',
-    'subCategory3',
-    'subCategory4',
-    'subCategory5',
+    'category2',
+    'subCategory7',
+    'subCategory8',
+    'subCategory9',
+    'subCategory10',
+    'subCategory11',
   ];
-  const shaverArr = ['category2'];
+  const shaverArr = ['category3'];
 
   const { value, id } = useParams();
 
