@@ -1,104 +1,147 @@
-import { check } from 'prettier';
 import React, { useState, useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
-import CartList from '../CartList/CartList';
+import { useNavigate } from 'react-router-dom';
 import './Cart.scss';
+import CartEmpty from './components/CartEmpty';
+import CartItem from './components/CartItem';
 
-function Cart() {
+const Cart = () => {
+  const [cartList, setCartList] = useState([]);
+  const [sumPrice, setSumPrice] = useState(0);
+  const navigate = useNavigate();
+  const hasCart = cartList.length;
+  const accessToken = localStorage.getItem('token') ?? '';
+
+  const totalSumPrice = cartList?.reduce(
+    (prev, curr) => prev + parseInt(curr.price) * parseInt(curr.quantity),
+    sumPrice
+  );
+
+  const getCartData = () => {
+    const data = fetch('http://10.58.52.222:8000/carts', {
+      method: 'GET',
+      headers: { authorization: accessToken },
+    })
+      .then(response => response.json())
+      .then(data => setCartList(data.data));
+  };
+  useEffect(() => {
+    getCartData();
+  }, []);
+  const deleteItem = id => {
+    fetch(`http://10.58.52.222:8000/carts/${id}`, {
+      method: 'DELETE',
+      headers: {
+        authorization: accessToken,
+      },
+    }).then(res => {
+      if (res.status === 204) {
+        alert('상품이 장바구니에서 삭제되었습니다');
+        setCartList(cartList.filter(cartList => id !== cartList.cartId));
+      } else {
+        alert('다시 시도해주세요');
+      }
+    });
+  };
+
+  const handleClickPurchase = () => {
+    fetch('http://10.58.52.222:8000/orders', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        authorization: accessToken,
+      },
+      body: JSON.stringify({
+        userId: cartList.userId,
+        price: totalSumPrice,
+      }),
+    })
+      .then(res => res.json())
+      .then(() => {
+        goToMainPage();
+      });
+  };
+
+  const goToMainPage = () => {
+    navigate('/');
+  };
   return (
-    <div className="Wrap">
+    <div className="wrap">
       <div className="cartTitleWrap">
         <h2>장바구니</h2>
       </div>
 
       <div className="orderSelect">
-        <input className="checkAllList" type="checkbox" />
-
-        <label className="countCheck">
-          전체선택(<p>0</p>/<p>0</p>)
-        </label>
-        <a className="checkOneList">선택삭제</a>
+        <div className="checkboxWrap">
+          <div className="checkbox">
+            <input
+              id="countCheck"
+              type="checkbox"
+              className="checkAllList"
+              checked
+            />
+          </div>
+          <div className="countCheck">
+            <span>
+              전체선택 ({cartList.length}/{cartList.length})
+            </span>
+          </div>
+        </div>
+        <div className="vl" />
+        <div className="sellectButton">
+          <span>선택삭제</span>
+        </div>
       </div>
 
       <div className="orderWrap">
         <div className="orderListWrap">
-          {/* TODO:창훈님 만드신 상품카드, 리스트 참고해서 구현하면 될 것 같습니다!! */}
-          {/* 1. 컴포넌트로 만들어서 넣기 / 2.map 돌리기 */}
-          <ul className="orderList" />
+          {hasCart === 0 ? (
+            <CartEmpty />
+          ) : (
+            <ul>
+              {cartList.map((cart, i) => (
+                <CartItem key={i} {...cart} deleteItem={deleteItem} />
+              ))}
+            </ul>
+          )}
         </div>
         <div className="orderAside">
           <div className="orderReceipt">
-            {RECEIPT_FORM.map(info => {
-              return (
-                <div className="ReceiptTop" key={info.id} name={info.name}>
-                  <div className="amountTitle">{info.amountTitle} </div>
-                  <div className="amountNumber">
-                    {info.mark}
-                    {info.amount}원
-                  </div>
+            <div className="receiptHeading">
+              <div className="totalPrice">
+                <div>합계</div>
+                <span>{totalSumPrice.toLocaleString()}원</span>
+              </div>
+              <div className="discountPrice">
+                <div>할인금액</div>
+                <span>- 0원</span>
+              </div>
+              <div className="deliveryFee">
+                <div>배송비</div>
+                <span>+ 0원</span>
+              </div>
+            </div>
+            <div className="receiptBottom">
+              <div className="vaildPoint">
+                <div>사용가능 포인트</div>
+                <div className="totalPoint">
+                  <span>1,000,000원</span>
                 </div>
-              );
-            })}
-            <div className="ReceiptBottom">
-              <div>결제예정금액</div>
-              <div className="totalAmount">
-                <p>0 </p> 원
+              </div>
+              <div className="usingPoint">
+                <div>결제예정 포인트</div>
+                <div className="totalAmount">
+                  <span>{totalSumPrice.toLocaleString()}원</span>
+                </div>
               </div>
             </div>
           </div>
-          <button className="paymentButton">구매하기</button>
+          <button className="paymentButton" onClick={handleClickPurchase}>
+            구매하기
+          </button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Cart;
-
-//더 잘게 쪼개서 + - 원 나누기
-const RECEIPT_FORM = [
-  {
-    id: 1,
-    name: 'totalAmount',
-    amountTitle: '합계',
-    amount: '0',
-  },
-  {
-    id: 2,
-    name: 'discountAmount',
-    amountTitle: '할인금액',
-    mark: '- ',
-    amount: '0',
-  },
-  {
-    id: 3,
-    name: 'deliveryFee',
-    amountTitle: '배송비',
-    mark: '+ ',
-    amount: '0',
-  },
-];
-
-const DUMMY_CART_LIST = [
-  {
-    id: 1,
-    name: '로오션',
-    price: 13000,
-    amount: 1,
-    isChecked: true,
-  },
-  {
-    id: 2,
-    name: '샴푸',
-    price: 20000,
-    amount: 1,
-    isChecked: true,
-  },
-  {
-    id: 3,
-    name: '면도기',
-    price: 36000,
-    amount: 1,
-    isChecked: true,
-  },
-];

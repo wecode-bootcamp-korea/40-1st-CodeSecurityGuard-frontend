@@ -1,4 +1,10 @@
 .contents {
+  ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+  }
   margin: 60px;
   margin-right: 5%;
   margin-left: 5%;
@@ -27,4 +33,19 @@
   .productList {
     margin-bottom: 80px;
   }
+}
+
+.productListMenu {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.sorting {
+  float: right;
+}
+.productList {
+  margin-bottom: 80px;
+}
+
+li {
+  list-style: none;
 }
