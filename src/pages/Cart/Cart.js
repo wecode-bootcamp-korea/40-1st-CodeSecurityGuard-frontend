@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Cart.scss';
+import { api, BASE_URL } from '../../api/config';
 import CartEmpty from './components/CartEmpty';
 import CartItem from './components/CartItem';
+import './Cart.scss';
 
-const Cart = () => {
+const Cart = id => {
   const [cartList, setCartList] = useState([]);
   const [sumPrice, setSumPrice] = useState(0);
   const navigate = useNavigate();
   const hasCart = cartList.length;
   const accessToken = localStorage.getItem('token') ?? '';
+  const userPoint = cartList.length !== 0 ? cartList[0].point : 0;
 
   const totalSumPrice = cartList?.reduce(
     (prev, curr) => prev + parseInt(curr.price) * parseInt(curr.quantity),
@@ -17,7 +19,7 @@ const Cart = () => {
   );
 
   const getCartData = () => {
-    const data = fetch('http://10.58.52.222:8000/carts', {
+    const data = fetch(api.cart, {
       method: 'GET',
       headers: { authorization: accessToken },
     })
@@ -27,8 +29,9 @@ const Cart = () => {
   useEffect(() => {
     getCartData();
   }, []);
+
   const deleteItem = id => {
-    fetch(`http://10.58.52.222:8000/carts/${id}`, {
+    fetch(`${BASE_URL}/carts/${id}`, {
       method: 'DELETE',
       headers: {
         authorization: accessToken,
@@ -44,19 +47,20 @@ const Cart = () => {
   };
 
   const handleClickPurchase = () => {
-    fetch('http://10.58.52.222:8000/orders', {
+    fetch(api.order, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
         authorization: accessToken,
       },
       body: JSON.stringify({
-        userId: cartList.userId,
+        userId: cartList[0].userId,
         price: totalSumPrice,
       }),
     })
       .then(res => res.json())
       .then(() => {
+        alert('구매가 완료되었습니다!');
         goToMainPage();
       });
   };
@@ -124,7 +128,9 @@ const Cart = () => {
               <div className="vaildPoint">
                 <div>사용가능 포인트</div>
                 <div className="totalPoint">
-                  <span>1,000,000원</span>
+                  <span>
+                    {userPoint ? Math.floor(userPoint).toLocaleString() : '0'}원
+                  </span>
                 </div>
               </div>
               <div className="usingPoint">

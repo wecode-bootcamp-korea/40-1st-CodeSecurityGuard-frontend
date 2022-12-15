@@ -1,17 +1,17 @@
-@import '../../../styles/mixins/flex.scss';
+@import '../../../styles/mixins/flex';
 
 .cartItemWrapper {
+  grid: none;
+  flex-direction: row;
   width: 680px;
   height: 120px;
   padding: 20px 0;
   @include flex(flex-start, center);
-  flex-direction: row;
-  grid: none;
 
   .cartListWrapper {
-    width: 680px;
     display: flex;
     align-items: center;
+    width: 680px;
 
     input {
       width: 20px;
@@ -39,8 +39,8 @@
     margin-left: 10px;
 
     .qtyWrapper {
-      width: 250px;
       flex-direction: row;
+      width: 250px;
       @include flex(space-between, center);
     }
     .qtyButtonWrapper {
