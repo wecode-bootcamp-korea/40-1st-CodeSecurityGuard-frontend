@@ -14,13 +14,13 @@ const CartItem = props => {
   const [currentAmount, setCurrentAmount] = useState(quantity);
 
   const plusQuantity = () => {
-    setCurrentAmount(prev => prev + 1);
+    setCurrentAmount(quantity => quantity + 1);
   };
   const minusQuantity = () => {
     if (currentAmount <= 1) {
       return;
     }
-    setCurrentAmount(prev => prev - 1);
+    setCurrentAmount(quantity => quantity - 1);
   };
 
   return (
@@ -37,7 +37,7 @@ const CartItem = props => {
             <div className="itemNameWrapper">{name}</div>
             <div className="qtyWrapper">
               <div className="qtyButtonWrapper">
-                <button onClick={minusQuantity}>−</button>
+                <button onClick={minusQuantity}>-</button>
                 <p className="amount">{quantity}</p>
                 <button onClick={plusQuantity}>+</button>
               </div>

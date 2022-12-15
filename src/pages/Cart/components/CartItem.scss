@@ -16,6 +16,7 @@
     input {
       width: 20px;
       height: 20px;
+      cursor: pointer;
     }
   }
   .checkBoxWrapper {
@@ -54,6 +55,7 @@
       border: 0;
       outline: 0;
       background-color: white;
+      cursor: pointer;
     }
   }
 }

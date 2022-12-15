@@ -8,7 +8,8 @@ const Cart = () => {
   const [cartList, setCartList] = useState([]);
   const [sumPrice, setSumPrice] = useState(0);
   const navigate = useNavigate();
-  const accessToken = localStorage.getItem('token');
+  const hasCart = cartList.length;
+  const accessToken = localStorage.getItem('token') ?? '';
 
   const totalSumPrice = cartList?.reduce(
     (prev, curr) => prev + parseInt(curr.price) * parseInt(curr.quantity),
@@ -93,7 +94,7 @@ const Cart = () => {
 
       <div className="orderWrap">
         <div className="orderListWrap">
-          {cartList.length === 0 ? (
+          {hasCart === 0 ? (
             <CartEmpty />
           ) : (
             <ul>
