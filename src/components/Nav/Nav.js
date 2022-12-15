@@ -12,15 +12,15 @@ const Nav = () => {
           <div className="headerElement">
             <ul className="headerLink">
               <li className="signUpLink">
-                <Link to="#">회원가입</Link>
+                <Link to="/signup">회원가입</Link>
               </li>
               <li className="loginLink">
-                <Link to="#">로그인</Link>
+                <Link to="/login">로그인</Link>
               </li>
             </ul>
             <form className="searchBarForm">
               <div className="weselyLogo">
-                <Link to="/Main">
+                <Link to="/">
                   <img src="/images/WESELY-logo.png" alt="WESELY" />
                 </Link>
               </div>
@@ -31,7 +31,7 @@ const Nav = () => {
                 </Link>
               </div>
               <div className="cartButtonWrapper">
-                <Link to="#">
+                <Link to="/carts">
                   <img src="/images/shopping-cart.png" alt="장바구니" />
                 </Link>
               </div>

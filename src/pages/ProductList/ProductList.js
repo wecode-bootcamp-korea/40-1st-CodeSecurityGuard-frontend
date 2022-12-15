@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './ProductList.scss';
 import ProductCard from './Product/ProductCard';
 import { useParams } from 'react-router-dom';
+
 import SubCategoryList from './Product/SubCategoryList';
 import { BASE_URL } from '../../api/config';
 
@@ -84,7 +85,7 @@ function ProductList() {
         )}
         <div className="productListBox">
           <div className="productListMenu">
-            총 {product?.length}개
+            총 {product.length}개
             <select className="sorting">
               <option value="newProduct">신상품</option>
               <option value="highPriceProduct">높은가격</option>

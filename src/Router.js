@@ -6,6 +6,7 @@ import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import ProductCard from './pages/ProductList/Product/ProductCard';
 import ProductList from './pages/ProductList/ProductList';
+import Cart from './pages/Cart/Cart';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import MainPage from './pages/MainPage/MainPage';
 
@@ -18,6 +19,8 @@ const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/productcard" element={<ProductCard />} />
+        <Route path="/productlist" element={<ProductList />} />
+        <Route path="/carts" element={<Cart />} />
         <Route path="/productdetail/:id" element={<ProductDetail />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/productlist/:value/:id" element={<ProductList />} />

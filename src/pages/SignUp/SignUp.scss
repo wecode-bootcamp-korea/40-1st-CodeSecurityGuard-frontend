@@ -93,7 +93,6 @@
     width: 170px;
   }
   input[type='checkbox'] {
-    background: url('../../../public/images/check.png') no-repeat center;
     background-size: 25px 25px;
     cursor: pointer;
     appearance: none;
@@ -105,7 +104,7 @@
     margin-right: 20px;
   }
   input[type='checkbox']:checked {
-    background: url('../../../public/images/checked.png') no-repeat center;
+    background: url('../../../public/images/checkbox.png') no-repeat center;
     background-size: 20px 20px;
   }
   label {
