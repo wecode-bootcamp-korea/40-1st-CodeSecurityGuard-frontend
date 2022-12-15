@@ -38,7 +38,7 @@ const ProductDetail = () => {
   };
 
   useEffect(() => {
-    fetch(`http://10.58.52.188:8000/products/${productId}`)
+    fetch(`api.list/${productId}`)
       .then(response => response.json())
       .then(result => setProducts(result.data[0]));
   }, [productId]);
@@ -49,7 +49,7 @@ const ProductDetail = () => {
       moveToLogin();
     }
 
-    fetch('http://10.58.52.177:8000/carts/', {
+    fetch('api.carts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
