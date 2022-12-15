@@ -67,7 +67,7 @@ const ReviewTab = () => {
     <>
       <div className="productReviewTab">
         <div>후기 (0)</div>
-        <div>전체 상품 리뷰 보기</div>
+        <div className="productDetailAllReview">전체 상품 리뷰 보기</div>
       </div>
       <div className="productReviewListBox">
         <div>리뷰가 없습니다.</div>

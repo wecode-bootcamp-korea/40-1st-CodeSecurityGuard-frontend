@@ -1,30 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component } from 'react';
 import './ProductList.scss';
 import ProductCard from './Product/ProductCard';
 import { useParams } from 'react-router-dom';
 import CategoryList from './Product/CategoryList';
 
-function ProductList(props) {
-  const [product, setProduct] = useState([]);
-  const params = useParams();
 
-  // useEffect(() => {
-  //   fetch('http://10.58.52.118:8000/products/')
-  //     .then(response => response.json())
-  //     .then(result => setProduct(result.data));
-  // }, []);
-
-  useEffect(() => {
-    fetch(`/data/MOCK_DATA${params.value}.json`)
-      .then(result => result.json())
-      .then(data => setProduct(data));
-  }, []);
-
-  // const [highPriceProduct, setHighPriceProduct] = useState();
-  // function handleChange(event) {
-  //   setHighPriceProduct(event.target.value);
-  // }
+function ProductList() {
   return (
+    <>
     <div className="container">
       <div className="contents">
         <div className="advertisement">
@@ -52,24 +35,49 @@ function ProductList(props) {
           </div>
           <div className="productList">
             <ul>
-              {product.map(products => {
+              {/* {product.map(products => {
                 return (
                   <li key={products.id}>
                     <ProductCard
-                      id={products.id}
-                      thumbnailImageUrl={products.thumbnailImageUrl}
-                      name={products.name}
-                      price={products.price}
-                      description={products.description}
-                    />
+                      id={products.id},
+                      thumbnailImageUrl={products.thumbnailImageUrl},
+                      name={products.name},
+                      price={products.price},
+                      description={products.description}/>
                   </li>
-                );
-              })}
-            </ul>
+                )})} */}
+                  <li>
+                    <ProductCard />
+                  </li>
+                  <li>
+                    <ProductCard />
+                  </li>
+                  <li>
+                    <ProductCard />
+                  </li>
+                  <li>
+                    <ProductCard />
+                  </li>
+                  <li>
+                    <ProductCard />
+                  </li>
+                  <li>
+                    <ProductCard />
+                  </li>
+                  <li>
+                    <ProductCard />
+                  </li>
+                  <li>
+                    <ProductCard />
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      // </div>
+    // </div>
+    </>
   );
 }
 
