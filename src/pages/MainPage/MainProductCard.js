@@ -54,15 +54,12 @@ function MainProductCard(props) {
               alt={name}
             />
           </Link>
-
-          <Link to="#">
-            <img
-              onClick={onCart}
-              className="cartImage"
-              src="/images/carticonimage.jpg"
-              alt="카트아이콘"
-            />
-          </Link>
+          <img
+            onClick={onCart}
+            className="cartImage"
+            src="/images/carticonimage.jpg"
+            alt="카트아이콘"
+          />
           <div className="description">
             <div className="productName">{name}</div>
             <div className="productPrice">
