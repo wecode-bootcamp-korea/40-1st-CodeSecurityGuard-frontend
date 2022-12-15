@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './CategoryList.scss';
 
 const CategoryList = props => {
@@ -20,7 +21,7 @@ const CategoryList = props => {
     <div className="navCategoryWrap">
       <div className="categoryList">
         <ul className="categoryListMain">
-          {mainNameList.map(({ id, icon, mainname, subcategory }) => {
+          {mainNameList.map(({ id, icon, mainname, subcategory, url }) => {
             return (
               <li
                 className="mainCategory"
@@ -29,15 +30,26 @@ const CategoryList = props => {
                 onMouseEnter={onMouseEnterTab(id)}
               >
                 <div className="mainNameIcon">
-                  <img key={id} src={icon} alt={mainname} />
+                  <Link to={`${url}`} onClick="window.location.reload()">
+                    <img key={id} src={icon} alt={mainname} />
+                  </Link>
                 </div>
-                <div className="mainNameWrapper">{mainname}</div>
+                <div className="mainNameWrapper">
+                  <Link to={`${url}`} onClick="window.location.reload()">
+                    {mainname}
+                  </Link>
+                </div>
                 <ul className="categoryListSub">
                   {currentId === id &&
                     subcategory?.map(({ id, name }) => {
                       return (
                         <li className="subCategory" key={id} data={name}>
-                          {name}
+                          <Link
+                            to={`${url}`}
+                            onClick="window.location.reload()"
+                          >
+                            {name}
+                          </Link>
                         </li>
                       );
                     })}
