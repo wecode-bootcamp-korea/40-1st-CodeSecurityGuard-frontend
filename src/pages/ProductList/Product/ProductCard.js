@@ -10,7 +10,12 @@ function ProductCard(props) {
     <div className="productCardList">
       <div className="thumbnail">
         <Link to={`/productdetail/${id}`}>
-          <img className="thumbnailImage" src={thumbnailImageUrl} alt={name} />
+          <img
+            className="thumbnailImage"
+            src={thumbnailImageUrl}
+            alt={name}
+            onClick={() => window.scrollTo({ top: 0 })}
+          />
         </Link>
 
         <img

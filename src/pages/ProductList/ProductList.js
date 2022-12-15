@@ -1,12 +1,14 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProductList.scss';
 import ProductCard from './Product/ProductCard';
 import { useParams } from 'react-router-dom';
 import SubCategoryList from './Product/SubCategoryList';
+import { BASE_URL } from '../../api/config';
 
 function ProductList() {
   const [product, setProduct] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const allArr = ['all1'];
   const medicineArr = [
@@ -19,46 +21,47 @@ function ProductList() {
   ];
   const shaverArr = ['category2'];
 
-  const params = useParams();
-  const paramv = params.value;
-  const parami = params.id;
+  const { value, id } = useParams();
 
   useEffect(() => {
-    paramv.length < 5
-      ? fetch('http://10.58.52.191:8000/products')
-          .then(response => response.json())
-          .then(result => setProduct(result.data))
-      : fetch(`http://10.58.52.191:8000/products/${paramv}/${parami}`)
-          .then(response => response.json())
-          .then(result => setProduct(result.data));
-  }, []);
+    const hasSubcate = value.length > 5;
+    const appendedUrl = hasSubcate ? `${value}/${id}` : '';
+
+    fetch(`${BASE_URL}/products/${appendedUrl}`)
+      .then(response => response.json())
+      .then(result => {
+        setProduct(result.data);
+        setLoading(false);
+      });
+  }, [value, id]);
 
   useEffect(() => {
-    fetch(`/data/${paramv}${parami}.json`)
+    fetch(`/data/${value}${id}.json`)
       .then(result => result.json())
       .then(data => setSubCategory(data));
-  }, []);
+  }, [value, id]);
 
+  if (loading) return;
   return (
     <div className="container">
       <div className="contents">
         <div className="advertisement">
-          {allArr.includes(`${paramv}${parami}`) ? (
+          {allArr.includes(`${value}${id}`) ? (
             ''
-          ) : medicineArr.includes(`${paramv}${parami}`) ? (
+          ) : medicineArr.includes(`${value}${id}`) ? (
             <img className="ad" src="/images/ad1.jpeg" alt="영양제" />
-          ) : shaverArr.includes(`${paramv}${parami}`) ? (
+          ) : shaverArr.includes(`${value}${id}`) ? (
             <img className="ad" src="/images/ad2.jpeg" alt="면도/제모용품" />
           ) : (
             <img className="ad" src="/images/ad3.jpeg" alt="스킨케어" />
           )}
         </div>
 
-        {allArr.includes(`${paramv}${parami}`) ? (
+        {allArr.includes(`${value}${id}`) ? (
           <div className="listTitle">전체보기</div>
-        ) : medicineArr.includes(`${paramv}${parami}`) ? (
+        ) : medicineArr.includes(`${value}${id}`) ? (
           <div className="listTitle">영양제</div>
-        ) : shaverArr.includes(`${paramv}${parami}`) ? (
+        ) : shaverArr.includes(`${value}${id}`) ? (
           <div className="listTitle">면도/제모용품</div>
         ) : (
           <div className="listTitle">스킨케어</div>
@@ -81,7 +84,7 @@ function ProductList() {
         )}
         <div className="productListBox">
           <div className="productListMenu">
-            총 {product.length}개
+            총 {product?.length}개
             <select className="sorting">
               <option value="newProduct">신상품</option>
               <option value="highPriceProduct">높은가격</option>
