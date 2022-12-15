@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Modal from '../../components/Modal/Modal';
+import ScrollUpBtn from '../../components/ScrollUpTop/ScrollUpTop';
 import MenuTab from './MenuTab';
 import './ProductDetail.scss';
 
@@ -38,7 +39,7 @@ const ProductDetail = () => {
   };
 
   useEffect(() => {
-    fetch(`http://10.58.52.188:8000/products/${productId}`)
+    fetch(`http://10.58.52.222:8000/products/${productId}`)
       .then(response => response.json())
       .then(result => setProducts(result.data[0]));
   }, [productId]);
@@ -49,7 +50,7 @@ const ProductDetail = () => {
       moveToLogin();
     }
 
-    fetch('http://10.58.52.177:8000/carts/', {
+    fetch('http://10.58.52.222:8000/carts/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -132,6 +133,7 @@ const ProductDetail = () => {
       <div className="productDetailTab">
         <MenuTab />
       </div>
+      <ScrollUpBtn />
     </>
   );
 };
