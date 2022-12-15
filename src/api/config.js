@@ -1,5 +1,5 @@
 //TODO: api 수정될 때마다 넣어주기
-export const BASE_URL = 'http://10.58.52.188:8000';
+export const BASE_URL = 'http://10.58.52.222:8000';
 
 export const api = {
   signin: `${BASE_URL}/users/signin`,

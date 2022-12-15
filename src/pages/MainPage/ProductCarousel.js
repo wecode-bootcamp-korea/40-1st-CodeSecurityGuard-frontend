@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './ProductCarousel.scss';
 import MainProductCard from './MainProductCard';
-import './MainProductCard.scss';
 import { api } from '../../api/config';
+import './MainProductCard.scss';
 
 const ProductCarousel = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
