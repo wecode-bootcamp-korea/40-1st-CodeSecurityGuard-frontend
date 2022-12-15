@@ -1,37 +1,60 @@
 .contents {
-  ul {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 0 auto;
-  }
-  margin: 60px;
-  margin-right: 5%;
-  margin-left: 5%;
+  margin: 30px;
+  margin-right: 12%;
+  margin-left: 12%;
 
   .ad {
     width: 100%;
     height: auto;
+    border-radius: 30px;
   }
   .listTitle {
-    .listTitleText {
-      padding-top: 50px;
-      padding-bottom: 50px;
-      font-size: 30px;
-      font-weight: bolder;
-      text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+  }
+  .subCategoryBox {
+    padding: 40px;
+    border: 1px solid;
+    border-radius: 20px;
+    border-color: rgb(166, 168, 170);
+    color: black;
+
+    ul {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   }
 
   .productListMenu {
     margin-top: 30px;
     margin-bottom: 60px;
+    padding: 30px;
   }
   .sorting {
     float: right;
   }
+
   .productList {
     margin-bottom: 80px;
+
+    ul {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 auto;
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
 }
 

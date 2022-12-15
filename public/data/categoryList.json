@@ -1,31 +1,58 @@
 [
-  { "id": 1, "icon": "/images/magnify.png", "mainname": "전체보기" },
+  {
+    "id": 1,
+    "icon": "/images/magnify.png",
+    "mainname": "전체보기",
+    "url": "/productlist/all/1"
+  },
   {
     "id": 2,
     "icon": "/images/pill.png",
     "mainname": "영양제",
+    "url": "/productlist/category/1",
+    "image": "/images/ad2.jpeg",
     "subcategory": [
-      { "id": 1, "name": "전체보기" },
-      { "id": 2, "name": "활력충전, 면역" },
-      { "id": 3, "name": "눈/혈행 건강" },
-      { "id": 4, "name": "뼈, 신경, 근육" },
-      { "id": 5, "name": "장/간 건강" },
-      { "id": 6, "name": "체중관리/피부건강" }
+      { "id": 1, "name": "전체보기", "url": "/productlist/category/1" },
+      {
+        "id": 2,
+        "name": "활력충전, 면역",
+        "url": "/productlist/subCategory/1"
+      },
+      { "id": 3, "name": "눈/혈행 건강", "url": "/productlist/subCategory/2" },
+      {
+        "id": 4,
+        "name": "뼈, 신경, 근육",
+        "url": "/productlist/subCategory/3"
+      },
+      { "id": 5, "name": "장/간 건강", "url": "/productlist/subCategory/4" },
+      {
+        "id": 6,
+        "name": "체중관리/피부건강",
+        "url": "/productlist/subCategory/5"
+      }
     ]
   },
-  { "id": 3, "icon": "/images/razor.png", "mainname": "면도/제모용품" },
+  {
+    "id": 3,
+    "icon": "/images/razor.png",
+    "mainname": "면도/제모용품",
+    "url": "/productlist/category/2",
+    "image": "/images/ad1.jpeg"
+  },
   {
     "id": 4,
     "icon": "/images/water.png",
     "mainname": "스킨케어",
+    "url": "/productlist/category/3",
+    "image": "/images/ad3.jpeg",
     "subcategory": [
-      { "id": 1, "name": "전체보기" },
-      { "id": 2, "name": "클렌징" },
-      { "id": 3, "name": "토너" },
-      { "id": 4, "name": "세럼" },
-      { "id": 5, "name": "로션/크림" },
-      { "id": 6, "name": "선크림" },
-      { "id": 7, "name": "마스크팩" }
+      { "id": 1, "name": "전체보기", "url": "/productlist/category/3" },
+      { "id": 2, "name": "클렌징", "url": "/productlist/subCategory/6" },
+      { "id": 3, "name": "토너", "url": "/productlist/subCategory/7" },
+      { "id": 4, "name": "세럼", "url": "/productlist/subCategory/8" },
+      { "id": 5, "name": "로션/크림", "url": "/productlist/subCategory/9" },
+      { "id": 6, "name": "선크림", "url": "/productlist/subCategory/10" },
+      { "id": 7, "name": "마스크팩", "url": "/productlist/subCategory/11" }
     ]
   }
 ]

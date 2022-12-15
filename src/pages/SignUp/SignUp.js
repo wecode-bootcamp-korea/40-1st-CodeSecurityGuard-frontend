@@ -10,7 +10,6 @@ const SignUp = () => {
     password: '',
     checkPassword: '',
     userName: '',
-    address: '',
     phoneNumberCenter: '',
     phoneNumberLast: '',
   });

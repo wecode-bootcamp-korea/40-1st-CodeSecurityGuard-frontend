@@ -10,21 +10,24 @@ function ProductCard(props) {
     <div className="productCardList">
       <div className="thumbnail">
         <Link to={`/productdetail/${id}`}>
-          <img className="thumbnailImage" src={thumbnailImageUrl} alt={name} />
-        </Link>
-
-        <Link to="#">
           <img
-            className="cartImage"
-            src="/images/carticonimage.jpg"
-            alt="카트아이콘"
+            className="thumbnailImage"
+            src={thumbnailImageUrl}
+            alt={name}
+            onClick={() => window.scrollTo({ top: 0 })}
           />
         </Link>
+
+        <img
+          className="cartImage"
+          src="/images/carticonimage.jpg"
+          alt="카트아이콘"
+        />
       </div>
 
       <div className="description">
         <div className="productName">{name}</div>
-        <div className="productPrice">{price}</div>
+        <div className="productPrice">{Number(`${price}`)}원</div>
         <div className="discountedPrice">{discountedPrice}</div>
         <div className="productInformation">{description}</div>
       </div>

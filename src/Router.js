@@ -22,7 +22,8 @@ const Router = () => {
         <Route path="/productlist" element={<ProductList />} />
         <Route path="/carts" element={<Cart />} />
         <Route path="/productdetail/:id" element={<ProductDetail />} />
-        <Route path="/productlist/:value" element={<ProductList />} />
+        <Route path="/main" element={<MainPage />} />
+        <Route path="/productlist/:value/:id" element={<ProductList />} />
       </Routes>
       <Footer />
     </BrowserRouter>
