@@ -2,35 +2,33 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProductCard.scss';
 
-function ProductCard() {
+function ProductCard(props) {
+  const { id, thumbnailImageUrl, name, price, discountedPrice, description } =
+    props;
+
   return (
-    <productCard>
-      <div className="productCardList">
-        <div className="thumbnail">
-          <Link to="1">
-            <img
-              className="thumbnailImage"
-              src="./images/1.jpg"
-              alt="상품이름"
-            />
-          </Link>
+    <div className="productCardList">
+      <div className="thumbnail">
+        <Link to={`/productdetail/${id}`}>
+          <img className="thumbnailImage" src={thumbnailImageUrl} alt={name} />
+        </Link>
 
-          <Link to="2">
-            <img
-              className="cartImage"
-              src="./images/carticonimage.jpg"
-              alt="카트아이콘"
-            />
-          </Link>
-        </div>
-
-        <div className="description">
-          <div className="productName">상품 이름</div>
-          <div className="productPrice">상품 가격</div>
-          <div className="productDetail">상품 설명</div>
-        </div>
+        <Link to="#">
+          <img
+            className="cartImage"
+            src="/images/carticonimage.jpg"
+            alt="카트아이콘"
+          />
+        </Link>
       </div>
-    </productCard>
+
+      <div className="description">
+        <div className="productName">{name}</div>
+        <div className="productPrice">{price}</div>
+        <div className="discountedPrice">{discountedPrice}</div>
+        <div className="productInformation">{description}</div>
+      </div>
+    </div>
   );
 }
 

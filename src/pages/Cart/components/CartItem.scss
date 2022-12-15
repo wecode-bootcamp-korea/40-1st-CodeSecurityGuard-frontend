@@ -1,15 +1,22 @@
+@import '../../../styles/mixins/flex.scss';
+
 .cartItemWrapper {
   width: 680px;
   height: 120px;
   padding: 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  @include flex(flex-start, center);
   flex-direction: row;
   grid: none;
 
   .cartListWrapper {
+    width: 680px;
     display: flex;
+    align-items: center;
+
+    input {
+      width: 20px;
+      height: 20px;
+    }
   }
   .checkBoxWrapper {
     img {
@@ -17,26 +24,29 @@
       height: 13px;
     }
   }
+  .itemImg {
+    margin-left: 13px;
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
   .cartItemInfo {
-    display: flex;
+    @include flex(space-between, center);
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     width: 600px;
     margin-left: 10px;
 
     .qtyWrapper {
       width: 250px;
-      display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      @include flex(space-between, center);
     }
     .qtyButtonWrapper {
-      width: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border: 1px solid gray;
+      width: 88px;
+      height: 30px;
+      @include flex(space-between, center);
+      border: 0.8px solid #dddddd;
       border-radius: 3px;
     }
 

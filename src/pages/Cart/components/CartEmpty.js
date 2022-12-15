@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './CartEmpty.scss';
 export default function CartEmpty() {
   return (
     <div className="cartEmpty">

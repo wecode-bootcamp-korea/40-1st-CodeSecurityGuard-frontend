@@ -39,7 +39,7 @@ const Footer = () => {
             <img
               className="kakaotalkIcon"
               alt="카카오톡아이콘"
-              src=".\images\kakaotalk-icon.svg"
+              src="\images\kakaotalk-icon.svg"
             />
             <p className="kakaotalkChannel">카카오톡 채널 '코드방범대'</p>
           </div>

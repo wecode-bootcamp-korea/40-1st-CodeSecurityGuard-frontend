@@ -1,53 +1,46 @@
-@import '../../styles/mixins/flex.scss';
-
-$primary-color: #00388d;
+@import '../../styles/mixins/flex';
 
 .nav {
-  background-color: white;
-  border-bottom: 1px solid lightgray;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
   z-index: 20;
+  top: 0;
+  border-bottom: 1px solid lightgray;
+  background-color: white;
 
   .navBox {
     @include columnFlex;
-    overflow: hidden;
     max-width: 1050px;
-    margin: 14px auto 0;
     height: auto;
+    margin: 14px auto 0;
+    overflow: hidden;
 
     .headerElement {
       .headerLink {
         @include flex(flex-end, center);
         font-size: 14px;
         gap: 26px;
-
         .signUpLink {
           a {
             color: $primary-color;
           }
         }
-
         .loginLink {
           a {
             color: lightgray;
           }
         }
       }
-
       .searchBarForm {
         @include flex(space-between, center);
         margin: 20px 0;
-
         .weselyLogo {
           img {
-            margin-top: 20px;
             width: 200px;
             height: 85px;
+            margin-top: 20px;
           }
         }
-
         .headerSearchBox {
           @include flex(space-between, center);
           width: 440px;
@@ -55,7 +48,6 @@ $primary-color: #00388d;
           padding: 0 10px 0 22px;
           border: 1px solid $primary-color;
           border-radius: 5px;
-
           .searchInput {
             width: 300px;
             height: 30px;
@@ -66,11 +58,10 @@ $primary-color: #00388d;
             }
 
             .submitButton {
-              background-color: white;
               border-style: none;
+              background-color: white;
             }
           }
-
           img {
             width: 28px;
             height: 28px;
@@ -82,7 +73,6 @@ $primary-color: #00388d;
           display: flex;
           justify-content: end;
           width: 150px;
-
           img {
             width: 30px;
             height: 30px;
@@ -92,45 +82,40 @@ $primary-color: #00388d;
     }
     .navWrapper {
       @include flex(space-between, center);
-      height: 60px;
       width: 1050px;
-
+      height: 60px;
       .navLeft {
+        display: flex;
+        position: relative;
+        align-items: center;
         width: 150px;
         height: 100%;
         margin-bottom: 20px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 16px;
         font-size: 18px;
         font-weight: 700;
         cursor: pointer;
-
+        gap: 16px;
         .navCategory {
           transition: all 0.2s ease-in-out;
         }
-
         img {
           width: 40px;
           height: 40px;
         }
       }
-
       .tabMenuWrapper {
         .tabMenu {
-          height: 100%;
           display: flex;
           align-items: center;
+          height: 100%;
           gap: 80px;
           a {
+            color: black;
             font-size: 18px;
             font-weight: 700;
-            color: black;
           }
         }
       }
-
       .rightMenuWrapper {
         width: 150px;
         height: 60px;

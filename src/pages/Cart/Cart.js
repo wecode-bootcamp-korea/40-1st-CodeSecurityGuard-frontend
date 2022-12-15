@@ -1,48 +1,70 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Cart.scss';
+import CartEmpty from './components/CartEmpty';
 import CartItem from './components/CartItem';
 
 const Cart = () => {
-  //GET으로 받아온 장바구니 리스트 set
   const [cartList, setCartList] = useState([]);
-  const accessToken = localStorage.getItem('Token');
+  const [sumPrice, setSumPrice] = useState(0);
+  const navigate = useNavigate();
+  const accessToken = localStorage.getItem('token');
 
-  //장바구니 데이터 GET 해오기
+  const totalSumPrice = cartList?.reduce(
+    (prev, curr) => prev + parseInt(curr.price) * parseInt(curr.quantity),
+    sumPrice
+  );
+
   const getCartData = () => {
-    const data = fetch('http://10.58.52.191:8000/carts', {
+    const data = fetch('http://10.58.52.222:8000/carts', {
       method: 'GET',
-      header: { authorization: accessToken },
+      headers: { authorization: accessToken },
     })
       .then(response => response.json())
-      .then(result => setCartList(data.getCartData));
+      .then(data => setCartList(data.data));
   };
   useEffect(() => {
     getCartData();
   }, []);
-  const { id, name, img, price, amount } = cartList;
+  const deleteItem = id => {
+    fetch(`http://10.58.52.222:8000/carts/${id}`, {
+      method: 'DELETE',
+      headers: {
+        authorization: accessToken,
+      },
+    }).then(res => {
+      if (res.status === 204) {
+        alert('상품이 장바구니에서 삭제되었습니다');
+        setCartList(cartList.filter(cartList => id !== cartList.cartId));
+      } else {
+        alert('다시 시도해주세요');
+      }
+    });
+  };
 
-  // const deleteItem = id => {
-  //   fetch(`http://10.58.52.158:3002/cart/cartId/${cartId}`, {
-  //     method: 'DELETE',
-  //     headers: {
-  //       authorization: accessToken,
-  //     },
-  //   }).then(res => {
-  //     if (res.status === 201) {
-  //       alert('상품이 장바구니에서 삭제되었습니다');
-  //       setCartList(cartList.filter(cartList => id !== cartList.id));
-  //     } else {
-  //       alert('다시 시도해주세요');
-  //     }
-  //   });
-  // };
+  const handleClickPurchase = () => {
+    fetch('http://10.58.52.222:8000/orders', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        authorization: accessToken,
+      },
+      body: JSON.stringify({
+        userId: cartList.userId,
+        price: totalSumPrice,
+      }),
+    })
+      .then(res => res.json())
+      .then(() => {
+        goToMainPage();
+      });
+  };
 
-  // 구매하기 버튼 후 어떤 로직으로 가는지 상의하기
-  // ex. 모달창 구매하시겠습니까? -> y -> POST -> gotomain?
-  const handleClickPurchase = () => {};
-
+  const goToMainPage = () => {
+    navigate('/');
+  };
   return (
-    <div className="Wrap">
+    <div className="wrap">
       <div className="cartTitleWrap">
         <h2>장바구니</h2>
       </div>
@@ -54,12 +76,12 @@ const Cart = () => {
               id="countCheck"
               type="checkbox"
               className="checkAllList"
-              checked={true}
+              checked
             />
           </div>
           <div className="countCheck">
             <span>
-              전체선택{cartList.amout}/{cartList.amout}
+              전체선택 ({cartList.length}/{cartList.length})
             </span>
           </div>
         </div>
@@ -71,21 +93,22 @@ const Cart = () => {
 
       <div className="orderWrap">
         <div className="orderListWrap">
-          <ul className="orderList">
-            {cartList.map(cart => (
-              <CartItem key={cart.id} {...cart} />
-            ))}
-            {/* {DUMMY_CART_LIST.map(cart => (
-              <CartItem key={cart.id} {...cart} />
-            ))} */}
-          </ul>
+          {cartList.length === 0 ? (
+            <CartEmpty />
+          ) : (
+            <ul>
+              {cartList.map((cart, i) => (
+                <CartItem key={i} {...cart} deleteItem={deleteItem} />
+              ))}
+            </ul>
+          )}
         </div>
         <div className="orderAside">
           <div className="orderReceipt">
             <div className="receiptHeading">
               <div className="totalPrice">
                 <div>합계</div>
-                <span>0원</span>
+                <span>{totalSumPrice.toLocaleString()}원</span>
               </div>
               <div className="discountPrice">
                 <div>할인금액</div>
@@ -97,9 +120,17 @@ const Cart = () => {
               </div>
             </div>
             <div className="receiptBottom">
-              <div>결제예정금액</div>
-              <div className="totalAmount">
-                <span>0원</span>
+              <div className="vaildPoint">
+                <div>사용가능 포인트</div>
+                <div className="totalPoint">
+                  <span>1,000,000원</span>
+                </div>
+              </div>
+              <div className="usingPoint">
+                <div>결제예정 포인트</div>
+                <div className="totalAmount">
+                  <span>{totalSumPrice.toLocaleString()}원</span>
+                </div>
               </div>
             </div>
           </div>
@@ -113,24 +144,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-const DUMMY_CART_LIST = [
-  {
-    id: 1,
-    name: '로오션',
-    price: 13000,
-    amount: 1,
-  },
-  {
-    id: 2,
-    name: '샴푸',
-    price: 20000,
-    amount: 1,
-  },
-  {
-    id: 3,
-    name: '면도기',
-    price: 36000,
-    amount: 1,
-  },
-];
