@@ -9,6 +9,7 @@ import ProductList from './pages/ProductList/ProductList';
 import Cart from './pages/Cart/Cart';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import MainPage from './pages/MainPage/MainPage';
+import Search from './components/Nav/Search';
 
 const Router = () => {
   return (
@@ -23,6 +24,7 @@ const Router = () => {
         <Route path="/carts" element={<Cart />} />
         <Route path="/productdetail/:id" element={<ProductDetail />} />
         <Route path="/main" element={<MainPage />} />
+        <Route path="/search:id" element={<Search />} />
         <Route path="/productlist/:value/:id" element={<ProductList />} />
       </Routes>
       <Footer />

@@ -76,6 +76,7 @@ const ReviewTab = () => {
     </>
   );
 };
+
 const ProductDetailTab = () => {
   return (
     <div className="productDetailTabBox">
@@ -83,6 +84,7 @@ const ProductDetailTab = () => {
     </div>
   );
 };
+
 const MenuTab = id => {
   const [currentTab, setCurrentTab] = useState('상품설명');
 

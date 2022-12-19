@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { api } from '../../api/config';
 import './Login.scss';
 
@@ -22,8 +22,6 @@ function Login() {
       : alert('이메일, 비밀번호를 올바르게 입력해주세요');
   };
 
-  //TODO : api 요청 확인 시 이동 구현 필요 (이전페이지로 이동)
-  //TODO : 회원가입 성공시 alert 창 띄우기 vs 바로 이전페이지로 넘기기
   const signIn = () => {
     fetch(api.signin, {
       method: 'POST',

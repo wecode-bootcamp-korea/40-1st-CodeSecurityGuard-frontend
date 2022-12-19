@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { api } from '../../api/config';
 import './SignUp.scss';
 
@@ -50,15 +50,19 @@ const SignUp = () => {
       }),
     })
       .then(response => response.json())
-
       .then(data => {
         if (data.message === 'USER_CREATED') {
           return alert('회원가입 되었습니다!'), navigate('/login');
+        } else if (data.message === 'INVALID_EMAIL') {
+          return alert('이메일 형식을 확인해주세요');
+        } else if (data.message === 'INVALID_PASSWORD') {
+          return alert('비밀번호 형식을 확인해주세요');
         } else {
           alert('회원가입에 실패했습니다!');
         }
       });
   };
+
   return (
     <div className="signUp">
       <div className="signUpWrap">
@@ -68,14 +72,12 @@ const SignUp = () => {
           <p className="signUpRequired">필수입력사항</p>
         </div>
 
-        {/* TODO : input 아래 p태그로 유효성 검사결과 추가구현 예정 */}
         <div className="userInfo">
           {USER_FORM.map(info => {
             return (
               <div className="form" key={info.id}>
                 <div className="formTitle">{info.formTitle}</div>
                 <input
-                  //TODO : password type:password 로 변경예정 (유효성검사 위해)
                   name={info.name}
                   value={formValue.name}
                   className="formInput"
@@ -121,7 +123,6 @@ const SignUp = () => {
             />
           </div>
         </div>
-        {/* TODO : 체크박스 체크 시 버튼활성화 추가구현 예정 */}
         <div className="agreeWrap">
           <div className="agreeTitle">이용약관동의</div>
           <input className="checkbox" type="checkbox" />

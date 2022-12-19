@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
-import './Nav.scss';
 import CategoryList from '../CategoryList/CategoryList';
 import { Link, useNavigate } from 'react-router-dom';
+import './Nav.scss';
 
 const Nav = () => {
+  const [userInput, setUserInput] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const accessToken = localStorage.getItem('token') ?? '';
+
+  const handleSearch = e => {
+    setUserInput(e.target.value);
+  };
+
+  const onSubmit = event => {
+    if (event.keyCode == 13) return;
+    navigate(`/search${userInput}`);
+  };
 
   return (
     <nav className="nav">
@@ -28,18 +38,21 @@ const Nav = () => {
                 </Link>
               </div>
               <div className="headerSearchBox">
-                <input id="search" className="searchInput" type="text" />
+                <input
+                  id="search"
+                  className="searchInput"
+                  value={userInput}
+                  type="text"
+                  onChange={handleSearch}
+                  onKeyPress={onSubmit}
+                />
                 <Link to="#">
                   <img src="/images/loupe.png" alt="돋보기" />
                 </Link>
               </div>
               <div className="cartButtonWrapper">
-                <Link to="/carts">
-                  <img
-                    // onClick={vaildLogin}
-                    src="/images/shopping-cart.png"
-                    alt="장바구니"
-                  />
+                <Link to={!accessToken ? '/login' : '/carts'}>
+                  <img src="/images/shopping-cart.png" alt="장바구니" />
                 </Link>
               </div>
             </form>
