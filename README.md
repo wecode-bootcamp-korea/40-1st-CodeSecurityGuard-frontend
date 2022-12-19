@@ -75,20 +75,12 @@
 
 |  | 페이지 및 기능구현 | 설명 |
 | --- | --- | --- |
-| Main Page & Carousel | ![메인페이지](https://user-images.githubusercontent.com/109934186/208372544-9cfa5655-cf64-4030-9beb-360511ca2bdb.gif
-) | ・ 메인페이지 레이아웃/ 캐러셀 구현 |
-| Search | ![검색](https://user-images.githubusercontent.com/109934186/208373114-847fec69-78fe-44d5-a547-4e07ceab0dbf.gif
-) | ・ 검색창 및 기능 구현 |
-| Sign Up | ![회원가입](https://user-images.githubusercontent.com/109934186/208373208-cf00ed98-b061-4530-888a-00a7962f510f.gif
-) | ・ 유효성검사에 따른 회원가입 구현 |
-| Sign In | ![로그인](https://user-images.githubusercontent.com/109934186/208373267-e7c2c63e-7ac4-481a-a1e1-76cedc892745.gif
-) | ・ JWT를 활용한 로그인구현 |
-| Category | ![장바구니담기](https://user-images.githubusercontent.com/109934186/208373477-c97e52fd-379d-4b31-b9e6-d1fecee401ac.gif
-) | ・ Category 이동 구현 |
-| Product Detail | ![장바구니담기](https://user-images.githubusercontent.com/109934186/208373477-c97e52fd-379d-4b31-b9e6-d1fecee401ac.gif
-) | ・ 상품추가 시 장바구니 모달창 구현/상품추가 시 수량변경 구현/TOP-button기능 구현 |
-| Cart | ![장바구니담기](https://user-images.githubusercontent.com/109934186/208373477-c97e52fd-379d-4b31-b9e6-d1fecee401ac.gif
-) | ・ 장바구니 담기 및 모달창 구현 |
-| Cart delete | ![장바구니삭제](https://user-images.githubusercontent.com/109934186/208372798-203f39a6-22f3-49db-84f9-907fc4a21a02.gif
-) | ・ 장바구니 삭제 구현 |
+| Main Page & Carousel | ![메인페이지](https://user-images.githubusercontent.com/109934186/208372544-9cfa5655-cf64-4030-9beb-360511ca2bdb.gif) | ・ 메인페이지 레이아웃/ 캐러셀 구현 |
+| Search | ![검색](https://user-images.githubusercontent.com/109934186/208373114-847fec69-78fe-44d5-a547-4e07ceab0dbf.gif) | ・ 검색창 및 기능 구현 |
+| Sign Up | ![회원가입](https://user-images.githubusercontent.com/109934186/208373208-cf00ed98-b061-4530-888a-00a7962f510f.gif) | ・ 유효성검사에 따른 회원가입 구현 |
+| Sign In | ![로그인](https://user-images.githubusercontent.com/109934186/208373267-e7c2c63e-7ac4-481a-a1e1-76cedc892745.gif) | ・ JWT를 활용한 로그인구현 |
+| Category | ![장바구니담기](https://user-images.githubusercontent.com/109934186/208373477-c97e52fd-379d-4b31-b9e6-d1fecee401ac.gif) | ・ Category 이동 구현 |
+| Product Detail | ![장바구니담기](https://user-images.githubusercontent.com/109934186/208373477-c97e52fd-379d-4b31-b9e6-d1fecee401ac.gif) | ・ 상품추가 시 장바구니 모달창 구현/상품추가 시 수량변경 구현/TOP-button기능 구현 |
+| Cart | ![장바구니담기](https://user-images.githubusercontent.com/109934186/208373477-c97e52fd-379d-4b31-b9e6-d1fecee401ac.gif) | ・ 장바구니 담기 및 모달창 구현 |
+| Cart delete | ![장바구니삭제](https://user-images.githubusercontent.com/109934186/208372798-203f39a6-22f3-49db-84f9-907fc4a21a02.gif) | ・ 장바구니 삭제 구현 |
 | Payment | ![결제](https://user-images.githubusercontent.com/109934186/208372689-ba323e59-4072-4b12-8a96-47d77e735e81.gif) | ・ 결제구현 |
