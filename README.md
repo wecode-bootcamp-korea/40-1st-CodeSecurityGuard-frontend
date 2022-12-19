@@ -79,7 +79,7 @@
 ・ 캐러셀 구현 |
 | Search |  | ・ 검색창 및 기능 구현 |
 | Sign Up |  | ・ 유효성검사에 따른 회원가입 구현 |
-| Sign In | https://files.slack.com/files-pri/TH0U6FBTN-F04FKRM0ZCN/_________.gif | ・ JWT를 활용한 로그인구현 |
+| Sign In | ![로그인](https://user-images.githubusercontent.com/109934186/208371988-a216f074-4cb6-4b5f-8b7d-a55093ea8175.gif)| ・ JWT를 활용한 로그인구현 |
 | Category |  | ・ Category 이동 구현 |
 | Product Detail |  | ・ 상품추가 시 장바구니 모달창 구현
 ・ 상품추가 시 수량변경 구현
