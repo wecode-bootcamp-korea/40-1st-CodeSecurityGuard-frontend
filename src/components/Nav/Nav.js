@@ -7,6 +7,7 @@ const Nav = () => {
   const [userInput, setUserInput] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const accessToken = localStorage.getItem('token') ?? '';
 
   const handleSearch = e => {
     setUserInput(e.target.value);
@@ -50,7 +51,7 @@ const Nav = () => {
                 </Link>
               </div>
               <div className="cartButtonWrapper">
-                <Link to="/carts">
+                <Link to={!accessToken ? '/login' : '/carts'}>
                   <img src="/images/shopping-cart.png" alt="장바구니" />
                 </Link>
               </div>
