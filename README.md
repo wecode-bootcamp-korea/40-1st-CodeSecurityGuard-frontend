@@ -75,14 +75,17 @@
 
 |  | 페이지 및 기능구현 | 설명 |
 | --- | --- | --- |
-| Main Page & Carousel |  | ・ 메인페이지 레이아웃
-・ 캐러셀 구현 |
-| Search |  | ・ 검색창 및 기능 구현 |
-| Sign Up |  | ・ 유효성검사에 따른 회원가입 구현 |
-| Sign In | ![로그인](https://user-images.githubusercontent.com/109934186/208371988-a216f074-4cb6-4b5f-8b7d-a55093ea8175.gif)| ・ JWT를 활용한 로그인구현 |
-| Category |  | ・ Category 이동 구현 |
-| Product Detail |  | ・ 상품추가 시 장바구니 모달창 구현
-・ 상품추가 시 수량변경 구현
-・ TOP-button기능 구현 |
-| Cart |  | ・ 장바구니 삭제 기능 구현
-・ 결제 기능 구현 |
+| Main Page & Carousel | ![image](https://user-images.githubusercontent.com/115388103/208372287-0c5b8794-53ae-4ddf-abf5-3fc2dea2ce25.png)
+ | ・ 메인페이지 레이아웃/ 캐러셀 구현 |
+| Search |![image](https://user-images.githubusercontent.com/115388103/208372184-6574fb42-71b3-4f58-a726-00c533ed608f.png)| ・ 검색창 및 기능 구현 |
+| Sign Up | ![image](https://user-images.githubusercontent.com/115388103/208372162-4449222a-53aa-4a16-81dd-a35c6fa2126d.png)
+ | ・ 유효성검사에 따른 회원가입 구현 |
+| Sign In | ![image](https://user-images.githubusercontent.com/115388103/208372135-d412c95d-bc4e-4354-bfe1-7272bfa831ca.png)
+ | ・ JWT를 활용한 로그인구현 |
+| Category | ![image](https://user-images.githubusercontent.com/115388103/208372234-5fb6d007-6f69-4d5c-b523-2c8f21ce2d54.png)
+ | ・ Category 이동 구현 |
+| Product Detail | ![image](https://user-images.githubusercontent.com/115388103/208372225-6328ee14-d8ad-47b6-9586-09636dc8ab70.png)
+ | ・ 상품추가 시 장바구니 모달창 구현/상품추가 시 수량변경 구현/TOP-button기능 구현 |
+| Cart | ![image](https://user-images.githubusercontent.com/115388103/208372107-ae9c08ce-d1ad-4e6a-99a9-9c49ff1eb6db.png)![image](https://user-images.githubusercontent.com/115388103/208372263-c416ffd5-f731-4073-901a-5a2decb21fca.png)
+
+ | ・ 장바구니 삭제 기능 구현/결제 기능 구현 |
