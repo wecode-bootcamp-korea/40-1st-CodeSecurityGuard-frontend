@@ -13,6 +13,6 @@
 
 ## ☑️ **Project Archive**
 
-[1차 팀 프로젝트](https://www.notion.so/1-781948f0af304faabc48bc0d4fd61d20)
+[NOTION](https://www.notion.so/1-781948f0af304faabc48bc0d4fd61d20)
 
 [Trello](https://trello.com/b/4UQP8twT/1st-project)
