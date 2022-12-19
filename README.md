@@ -63,7 +63,7 @@
 
 ## ✅ **Project Archive**
 
-[✍️Notion](https://www.notion.so/1-781948f0af304faabc48bc0d4fd61d20)
+[✍️Notion](https://resonant-starflower-61a.notion.site/1-781948f0af304faabc48bc0d4fd61d20)
 
 [🎟️Trello](https://trello.com/b/4UQP8twT/1st-project)
 
