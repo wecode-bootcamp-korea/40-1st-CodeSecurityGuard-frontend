@@ -68,3 +68,21 @@
 [🎟️Trello](https://trello.com/b/4UQP8twT/1st-project)
 
 [📠API](https://dbdiagram.io/d/63731a5ac9abfc611172ac4a)
+
+---
+
+## ✅ 구현기능
+
+|  | 페이지 및 기능구현 | 설명 |
+| --- | --- | --- |
+| Main Page & Carousel |  | ・ 메인페이지 레이아웃
+・ 캐러셀 구현 |
+| Search |  | ・ 검색창 및 기능 구현 |
+| Sign Up |  | ・ 유효성검사에 따른 회원가입 구현 |
+| Sign In | https://files.slack.com/files-pri/TH0U6FBTN-F04FKRM0ZCN/_________.gif | ・ JWT를 활용한 로그인구현 |
+| Category |  | ・ Category 이동 구현 |
+| Product Detail |  | ・ 상품추가 시 장바구니 모달창 구현
+・ 상품추가 시 수량변경 구현
+・ TOP-button기능 구현 |
+| Cart |  | ・ 장바구니 삭제 기능 구현
+・ 결제 기능 구현 |
