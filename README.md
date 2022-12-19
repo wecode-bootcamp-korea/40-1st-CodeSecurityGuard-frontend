@@ -43,7 +43,7 @@
 
 ---
 
-## ☑️ **적용 기술**
+## ✅ **적용 기술**
 
 ### 🧑🏻‍💻 **Front-end Developers**
 <img width="74" alt="image" src="https://user-images.githubusercontent.com/115388103/208362900-093d52b7-b700-44a8-a762-d5d5ea1025b9.png"><img width="80" alt="image" src="https://user-images.githubusercontent.com/115388103/208362924-eeec0bf6-17cf-4757-bf60-dda05a379106.png"><img width="78" alt="image" src="https://user-images.githubusercontent.com/115388103/208362957-9adcb30f-b35d-459f-addc-d82dd35e2f16.png"><img width="79" alt="image" src="https://user-images.githubusercontent.com/115388103/208362987-95ddd35a-db2a-46b8-9ce1-cccb7ce6c03c.png"><img width="72" alt="image" src="https://user-images.githubusercontent.com/115388103/208363024-1c8af346-3b28-4899-b1bb-df8d8908a8b7.png">
@@ -61,7 +61,7 @@
 
 ---
 
-## ☑️ **Project Archive**
+## ✅ **Project Archive**
 
 [✍️Notion](https://www.notion.so/1-781948f0af304faabc48bc0d4fd61d20)
 
